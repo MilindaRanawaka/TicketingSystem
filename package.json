@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "Back-install": "cd Backend && npm i",
+    "Back-install": "cd Backend && npm i",
     "Front-install": "cd Frontend/crud && npm i",
     "start": "cd Backend && node server.js",
     "client-start": "cd Frontend/crud && npm start",
