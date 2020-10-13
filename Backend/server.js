@@ -11,7 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-
+const usersRouter = require("./routes/users.route");
+app.use("/users", usersRouter);
 
 //MongoDB Connection
 const uri = process.env.ATLAS_URI;
