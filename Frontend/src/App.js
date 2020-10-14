@@ -7,6 +7,8 @@ import CustomerHomepage from "./Components/HomePage.Customer";
 import PrivateRoute from "./Components/ReactMiddleware/PrivateRoute";
 import Navbar from "./Components/Navbar";
 import 'antd/dist/antd.css';
+import AdminHomepage from "./Components/HomePage.Admin";
+import InspectorHomepage from "./Components/HomePage.Inspector";
 
 function App() {
   return (
@@ -23,10 +25,10 @@ function App() {
               {/*<PublicRoute restricted={true} component={CreateUser} path="/create-acc" exact />*/}
 
               {/*Admin(Public Transport Manager) Only Routes*/}
-              {/*<PrivateRoute component={AdminHome} AccessBy={"admin"} path="/admin" exact />*/}
+              <PrivateRoute component={AdminHomepage} AccessBy={"admin"} path="/adminHome" exact />
 
               {/*Ticket Inspector Only Routes*/}
-              {/*<PrivateRoute component={CardViewProductListComponent} AccessBy={"storeManager"} path="/storeManager" exact />*/}
+              <PrivateRoute component={InspectorHomepage} AccessBy={"inspector"} path="/inspectorHome" exact />
 
               {/*Customer Only Routes*/}
               <PrivateRoute component={CustomerHomepage} AccessBy={"customer"} path="/customerHome" exact />
