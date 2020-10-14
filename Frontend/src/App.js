@@ -1,18 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Switch } from "react-router-dom";
 import { Container } from "@material-ui/core";
-import './App.css';
 import PublicRoute from "./Components/ReactMiddleware/PublicRoute";
 import Login from "./Components/Login&Register/Login";
 import CustomerHomepage from "./Components/HomePage.Customer";
 import PrivateRoute from "./Components/ReactMiddleware/PrivateRoute";
+import Navbar from "./Components/Navbar";
+import 'antd/dist/antd.css';
 
 function App() {
   return (
     <div className="App">
       <React.Fragment>
         <BrowserRouter>
-          <Container maxWidth={false} style={{ marginTop: 30, paddingLeft: 0, paddingRight: 0 }}>
+          <Navbar />
+          <Container maxWidth={false} style={{ marginTop: 130, paddingLeft: 0, paddingRight: 0 }}>
             <Switch>
 
               {/*All the Public Routes of System*/}

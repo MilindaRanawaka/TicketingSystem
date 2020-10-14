@@ -51,7 +51,7 @@ export default class Login extends React.Component {
                 } else if (userType === "inspector") {
                     toast("Inspector Login In Successful");
                     login(response.data.token, response.data.user);
-                    window.location = "inspectorHome";
+                    window.location = "/inspectorHome";
                 }
 
             })
