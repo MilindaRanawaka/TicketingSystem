@@ -60,13 +60,13 @@ class Navbar extends Component {
                                             <div className="loged-info">
                                                 <div className="row">
                                                     <div className="col-md-auto">
-                                                        <a href="/finance">
+                                                        <a href="/financeHome">
                                                             <button type="button" className="btn btn-primary">Finance</button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/statics">
-                                                            <button type="button" className="btn btn-primary">Statics</button>
+                                                            <button type="button" className="btn btn-primary">Statistics</button>
                                                         </a>
                                                     </div>
                                                 </div>

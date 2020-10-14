@@ -9,6 +9,10 @@ import Navbar from "./Components/Navbar";
 import 'antd/dist/antd.css';
 import AdminHomepage from "./Components/HomePage.Admin";
 import InspectorHomepage from "./Components/HomePage.Inspector";
+import FinancePerDate from "./Components/PerDay.Finances";
+import FinancePerRoute from "./Components/PerRoute.Finances";
+import FinancePerBus from "./Components/PerBus.Finances";
+import StatisticsFinances from "./Components/Statistics.Finances";
 
 function App() {
   return (
@@ -26,6 +30,12 @@ function App() {
 
               {/*Admin(Public Transport Manager) Only Routes*/}
               <PrivateRoute component={AdminHomepage} AccessBy={"admin"} path="/adminHome" exact />
+              {<PrivateRoute component={FinancePerDate} AccessBy={"admin"} path="/financeHome" exact />}
+              {<PrivateRoute component={FinancePerRoute} AccessBy={"admin"} path="/financeRoute" exact />}
+              {<PrivateRoute component={FinancePerBus} AccessBy={"admin"} path="/financeBus" exact />}
+              {<PrivateRoute component={StatisticsFinances} AccessBy={"admin"} path="/financeStat" exact />}
+
+
 
               {/*Ticket Inspector Only Routes*/}
               <PrivateRoute component={InspectorHomepage} AccessBy={"inspector"} path="/inspectorHome" exact />
