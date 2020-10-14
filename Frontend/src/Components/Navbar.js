@@ -65,8 +65,8 @@ class Navbar extends Component {
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
-                                                        <a href="/statics">
-                                                            <button type="button" className="btn btn-primary">Statistics</button>
+                                                        <a href="/passengertrips">
+                                                            <button type="button" className="btn btn-primary">Passenger Trips</button>
                                                         </a>
                                                     </div>
                                                 </div>
