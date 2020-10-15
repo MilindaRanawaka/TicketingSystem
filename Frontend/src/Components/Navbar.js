@@ -21,8 +21,8 @@ class Navbar extends Component {
     };
 
     handleNameClick = () => {
-        if (localStorage.getItem(TOKEN_TYPE) === "customer") {
-            window.location = "/customerHome";
+        if (localStorage.getItem(TOKEN_TYPE) === "passenger") {
+            window.location = "/passengerHome";
         } else if (localStorage.getItem(TOKEN_TYPE) === "admin") {
             window.location = "/adminHome";
         } else if (localStorage.getItem(TOKEN_TYPE) === "inspector") {
@@ -80,11 +80,11 @@ class Navbar extends Component {
                                             <span style={{ display: "none" }}> Empty </span>
                                         )}
                                         {this.state.isLogin &&
-                                        localStorage.getItem(TOKEN_TYPE) === "customer" ? (
+                                        localStorage.getItem(TOKEN_TYPE) === "passenger" ? (
                                             <div className="loged-info">
                                                 <div className="row">
                                                     <div className="col-md-auto">
-                                                        <a href="/customerHome">
+                                                        <a href="/passengerHome">
                                                             <button type="button" className="btn btn-primary">Home</button>
                                                         </a>
                                                     </div>

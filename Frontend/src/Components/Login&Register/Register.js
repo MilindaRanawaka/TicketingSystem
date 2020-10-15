@@ -20,7 +20,7 @@ class Register extends Component {
             conPassword: "",
             address: "",
             gender: "",
-            type: "customer",
+            type: "passenger",
             balance: 0
         };
     }
@@ -51,7 +51,7 @@ class Register extends Component {
                 .post(serverUrl + "/users/add", users)
                 .then((response) => {
 
-                    toast("Register Successful , You will be redirected to Login Page");
+                    toast("Register Successful! \n You will be redirected to Login Page");
                     setTimeout(() => {
                         window.location = "/login";
                     }, 5000);

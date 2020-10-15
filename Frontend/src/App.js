@@ -3,7 +3,7 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import { Container } from "@material-ui/core";
 import PublicRoute from "./Components/ReactMiddleware/PublicRoute";
 import Login from "./Components/Login&Register/Login";
-import CustomerHomepage from "./Components/HomePage.Customer";
+import PassengerHomepage from "./Components/HomePage.Passenger";
 import PrivateRoute from "./Components/ReactMiddleware/PrivateRoute";
 import Navbar from "./Components/Navbar";
 import 'antd/dist/antd.css';
@@ -47,8 +47,8 @@ function App() {
               {/*Ticket Inspector Only Routes*/}
               <PrivateRoute component={InspectorHomepage} AccessBy={"inspector"} path="/inspectorHome" exact />
 
-              {/*Customer Only Routes*/}
-              <PrivateRoute component={CustomerHomepage} AccessBy={"customer"} path="/customerHome" exact />
+              {/*Passenger Only Routes*/}
+              <PrivateRoute component={PassengerHomepage} AccessBy={"passenger"} path="/passengerHome" exact />
 
             </Switch>
           </Container>

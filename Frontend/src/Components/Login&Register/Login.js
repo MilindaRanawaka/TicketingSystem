@@ -40,10 +40,10 @@ export default class Login extends React.Component {
 
                 //Check user type and redirect to relevant page
                 const userType = response.data.user["type"];
-                if (userType === "customer") {
-                    toast("Customer Login In Successful");
+                if (userType === "passenger") {
+                    toast("Passenger Login In Successful");
                     login(response.data.token, response.data.user);
-                    window.location = "/customerHome";
+                    window.location = "/passengerHome";
                 } else if (userType === "admin") {
                     toast("Admin Login In Successful");
                     login(response.data.token, response.data.user);

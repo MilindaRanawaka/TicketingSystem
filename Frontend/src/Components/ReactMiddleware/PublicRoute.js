@@ -6,8 +6,8 @@ import { TOKEN_TYPE } from "../config";
 //Redirecting management
 const RedirectTo = () => {
   const userType = localStorage.getItem(TOKEN_TYPE);
-  if (userType === "customer") {
-    window.location = "/customerHome";
+  if (userType === "passenger") {
+    window.location = "/passengerHome";
   } else if (userType === "admin") {
     window.location = "/adminHome";
   } else if (userType === "inspector") {
