@@ -7,7 +7,7 @@ const busSchema = new Schema(
   {
     regNo: { type: String, required: true, unique: true, trim: true },
     driverName: { type: String, required: true, trim: true },
-    capacity: { type: Integer, required: true, trim: true },
+    capacity: { type: Number, required: true, trim: true },
   },
   {
     timestamps: true,

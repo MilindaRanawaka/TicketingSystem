@@ -7,7 +7,7 @@ const fineSchema = new Schema(
   {
     userID: { type: String, required: true, trim: true },
     tripID: { type: String, required: true, trim: true },
-    Fine: { type: Integer, required: true, trim: true },
+    Fine: { type: Number, required: true, trim: true },
   },
   {
     timestamps: true,

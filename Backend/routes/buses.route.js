@@ -27,3 +27,6 @@ router.route("/").get((req, res) => {
     .then((Bus) => res.json(Bus))
     .catch((err) => res.status(400).json("Error: " + err));
 });
+
+//Export User Route
+module.exports = router;

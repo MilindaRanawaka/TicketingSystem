@@ -14,6 +14,18 @@ app.use(express.json());
 const usersRouter = require("./routes/users.route");
 app.use("/users", usersRouter);
 
+const busesRouter = require("./routes/buses.route");
+app.use("/buses", busesRouter);
+
+const finesRouter = require("./routes/fines.route");
+app.use("/fines", finesRouter);
+
+const routesRouter = require("./routes/routes.route");
+app.use("/routes", routesRouter);
+
+const tripsRouter = require("./routes/trip.route");
+app.use("/trips", tripsRouter);
+
 //MongoDB Connection
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }

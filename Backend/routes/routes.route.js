@@ -1,15 +1,15 @@
 const router = require("express").Router();
-let Route = require("../models/fines.model");
+let Route = require("../models/routes.model");
 
 //@route POST
 //@desc Add New Route
 router.route("/add").post((req, res) => {
-    const routeNO = req.body.routeNO;
+    const routeNo = req.body.routeNo;
     const startLocation = req.body.startLocation;
     const endLocation = req.body.endLocation;
   
     const newRoute = new Route({
-      routeNO,
+      routeNo,
       startLocation,
       endLocation
     });
@@ -27,3 +27,6 @@ router.route("/").get((req, res) => {
     .then((Route) => res.json(Route))
     .catch((err) => res.status(400).json("Error: " + err));
 });
+
+//Export User Route
+module.exports = router;

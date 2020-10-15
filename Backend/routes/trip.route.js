@@ -6,6 +6,7 @@ let Trip = require("../models/fines.model");
 router.route("/add").post((req, res) => {
 
     const routeID = req.body.routeID;
+    const busID = req.body.busID;
     const userID = req.body.userID;
     const startLocation = req.body.startLocation;
     const endLocation = req.body.endLocation;
@@ -14,6 +15,7 @@ router.route("/add").post((req, res) => {
   
     const newTrip = new Trip({
         routeID,
+        busID,
         userID,
         startLocation,
         endLocation,
@@ -34,3 +36,22 @@ router.route("/").get((req, res) => {
       .then((Trip) => res.json(Trip))
       .catch((err) => res.status(400).json("Error: " + err));
   });
+
+//@route GET
+//@desc Get Specific Category Using ID
+router.route("/:id").get((req, res) => {
+  Trip.findById(req.params.id)
+  .then((Trip) => res.json(Trip))
+  .catch((err) => res.status(400).json("Error: " + err));
+});
+
+//@route DELETE
+//@desc Delete Specific category Using ID
+router.route("/:id").delete((req, res) => {
+  Trip.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Trip deleted."))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+//Export User Route
+module.exports = router;
