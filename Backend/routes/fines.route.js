@@ -19,3 +19,11 @@ router.route("/add").post((req, res) => {
       .then(() => res.json("Fine added!"))
       .catch((err) => res.status(400).json("Error: " + err));
   });
+
+//@route GET
+//@desc Get All Fine
+router.route("/").get((req, res) => {
+  Fine.find()
+    .then((Fine) => res.json(Fine))
+    .catch((err) => res.status(400).json("Error: " + err));
+});

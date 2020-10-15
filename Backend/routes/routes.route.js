@@ -19,3 +19,11 @@ router.route("/add").post((req, res) => {
       .then(() => res.json("Route added!"))
       .catch((err) => res.status(400).json("Error: " + err));
   });
+
+//@route GET
+//@desc Get All Route
+router.route("/").get((req, res) => {
+  Route.find()
+    .then((Route) => res.json(Route))
+    .catch((err) => res.status(400).json("Error: " + err));
+});

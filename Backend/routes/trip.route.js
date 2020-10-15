@@ -26,3 +26,11 @@ router.route("/add").post((req, res) => {
       .then(() => res.json("Trip added!"))
       .catch((err) => res.status(400).json("Error: " + err));
   });
+
+//@route GET
+//@desc Get All Trip
+router.route("/").get((req, res) => {
+    Trip.find()
+      .then((Trip) => res.json(Trip))
+      .catch((err) => res.status(400).json("Error: " + err));
+  });

@@ -19,3 +19,11 @@ router.route("/add").post((req, res) => {
       .then(() => res.json("Bus added!"))
       .catch((err) => res.status(400).json("Error: " + err));
   });
+
+//@route GET
+//@desc Get All Bus
+router.route("/").get((req, res) => {
+  Bus.find()
+    .then((Bus) => res.json(Bus))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
