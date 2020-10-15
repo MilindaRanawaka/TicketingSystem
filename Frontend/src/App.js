@@ -17,6 +17,7 @@ import PassengerRoute from "./Components/Passenger_Route.Passenger";
 import RoutePassenger from "./Components/Route_Passenger.Passenger";
 import PassengerDate from "./Components/Passenger_Date.Passenger";
 import StatisticsPassengerTrips from "./Components/StatisticsTrip.Passenger";
+import Register from "./Components/Login&Register/Register";
 
 function App() {
   return (
@@ -24,13 +25,13 @@ function App() {
       <React.Fragment>
         <BrowserRouter>
           <Navbar />
-          <Container maxWidth={false} style={{ marginTop: 130, paddingLeft: 0, paddingRight: 0 }}>
+          <Container maxWidth={false} style={{ marginTop: 90, paddingLeft: 0, paddingRight: 0 }}>
             <Switch>
 
               {/*All the Public Routes of System*/}
               <PublicRoute restricted={true} component={Login} path="/" exact />
               <PublicRoute restricted={true} component={Login} path="/login" exact />
-              {/*<PublicRoute restricted={true} component={CreateUser} path="/create-acc" exact />*/}
+              <PublicRoute restricted={true} component={Register} path="/register" exact />
 
               {/*Admin(Public Transport Manager) Only Routes*/}
               <PrivateRoute component={AdminHomepage} AccessBy={"admin"} path="/adminHome" exact />

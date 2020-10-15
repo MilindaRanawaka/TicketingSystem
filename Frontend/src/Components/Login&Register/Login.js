@@ -90,8 +90,13 @@ export default class Login extends React.Component {
                             </form>
                         <br/>
                         <div className="card-footer">
-                            <div className="d-flex justify-content-center links">
-                                Don't have an account?<a href="/register">Register</a>
+                            <div className="justify-content-center links" align="center">
+                                Don't have an account?
+                                <a href="/register">
+                                    <button className="btn btn-sm btn-outline-primary" type="button">
+                                        Register
+                                    </button>
+                                </a>
                             </div>
                         </div>
                 </div>
