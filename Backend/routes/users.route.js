@@ -56,6 +56,7 @@ router.route("/add").post((req, res) => {
   const address = req.body.address;
   const gender = req.body.gender;
   const type = req.body.type;
+  const balance = req.body.balance;
 
   const newUser = new User({
     username,
@@ -65,6 +66,7 @@ router.route("/add").post((req, res) => {
     address,
     gender,
     type,
+    balance,
   });
 
   //password encryption using bcrypt
@@ -116,6 +118,25 @@ router.route("/update/:id").post((req, res) => {
           .save()
           .then(() => res.json("User Updated!"))
           .catch((err) => res.status(400).json("Error: " + err));
+      });
+    });
+  });
+});
+
+//@route POST
+//@desc Add Credit specific User using ID
+router.route("/addCredit/:id").post((req, res) => {
+  User.findById(req.params.id).then((users) => {
+    users.balance = req.body.balance;
+
+    bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(users.password, salt, (err, hash) => {
+        if (err) throw err;
+        users.password = hash;
+        users
+            .save()
+            .then(() => res.json("Credit Added Successfully!"))
+            .catch((err) => res.status(400).json("Error: " + err));
       });
     });
   });

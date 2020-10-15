@@ -60,6 +60,11 @@ class Navbar extends Component {
                                             <div className="loged-info">
                                                 <div className="row">
                                                     <div className="col-md-auto">
+                                                        <a href="/adminHome">
+                                                            <button type="button" className="btn btn-primary">Home</button>
+                                                        </a>
+                                                    </div>
+                                                    <div className="col-md-auto">
                                                         <a href="/financeHome">
                                                             <button type="button" className="btn btn-primary">Finance</button>
                                                         </a>
@@ -78,6 +83,11 @@ class Navbar extends Component {
                                         localStorage.getItem(TOKEN_TYPE) === "customer" ? (
                                             <div className="loged-info">
                                                 <div className="row">
+                                                    <div className="col-md-auto">
+                                                        <a href="/customerHome">
+                                                            <button type="button" className="btn btn-primary">Home</button>
+                                                        </a>
+                                                    </div>
                                                     <div className="col-md-auto">
                                                         <a href="/addCredit">
                                                             <button type="button" className="btn btn-primary">Add Credit</button>
@@ -102,6 +112,11 @@ class Navbar extends Component {
                                         localStorage.getItem(TOKEN_TYPE) === "inspector" ? (
                                             <div className="loged-info">
                                                 <div className="row">
+                                                    <div className="col-md-auto">
+                                                        <a href="/inspectorHome">
+                                                            <button type="button" className="btn btn-primary">Home</button>
+                                                        </a>
+                                                    </div>
                                                     <div className="col-md-auto">
                                                         <a href="/addFine">
                                                             <button type="button" className="btn btn-primary">Add Fine</button>

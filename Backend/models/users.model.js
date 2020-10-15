@@ -12,6 +12,7 @@ const userSchema = new Schema(
     address: { type: String, required: true, trim: true },
     gender: { type: String, required: true, trim: true },
     type: { type: String, required: true, trim: true },
+    balance: { type: Number,  trim: true },
   },
   {
     timestamps: true,

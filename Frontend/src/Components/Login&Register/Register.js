@@ -21,6 +21,7 @@ class Register extends Component {
             address: "",
             gender: "",
             type: "customer",
+            balance: 0
         };
     }
 
@@ -41,6 +42,7 @@ class Register extends Component {
             address: this.state.address,
             gender: this.state.gender,
             type: this.state.type,
+            balance: this.state.balance,
         };
 
         if (this.state.password === this.state.conPassword) {
