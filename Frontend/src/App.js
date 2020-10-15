@@ -18,6 +18,8 @@ import RoutePassenger from "./Components/Route_Passenger.Passenger";
 import PassengerDate from "./Components/Passenger_Date.Passenger";
 import StatisticsPassengerTrips from "./Components/StatisticsTrip.Passenger";
 import Register from "./Components/Login&Register/Register";
+import Footer from "./Components/Footer";
+import AddCredit from "./Components/Credit/AddCredit";
 
 function App() {
   return (
@@ -49,9 +51,11 @@ function App() {
 
               {/*Passenger Only Routes*/}
               <PrivateRoute component={PassengerHomepage} AccessBy={"passenger"} path="/passengerHome" exact />
+              <PrivateRoute component={AddCredit} AccessBy={"passenger"} path="/addCredit" exact />
 
             </Switch>
           </Container>
+          {/*<Footer />*/}
         </BrowserRouter>
       </React.Fragment>
     </div>

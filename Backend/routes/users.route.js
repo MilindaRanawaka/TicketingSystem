@@ -127,18 +127,20 @@ router.route("/update/:id").post((req, res) => {
 //@desc Add Credit specific User using ID
 router.route("/addCredit/:id").post((req, res) => {
   User.findById(req.params.id).then((users) => {
-    users.balance = req.body.balance;
+    if (!users) res.status(404).send("data is not found");
+    else {
+      users.balance = req.body.balance;
 
-    bcrypt.genSalt(10, (err, salt) => {
-      bcrypt.hash(users.password, salt, (err, hash) => {
-        if (err) throw err;
-        users.password = hash;
-        users
-            .save()
-            .then(() => res.json("Credit Added Successfully!"))
-            .catch((err) => res.status(400).json("Error: " + err));
-      });
-    });
+      users
+          .save()
+          .then((product) => {
+            res.json("Credit Added Successfully!");
+          })
+          .catch((err) => {
+            res.status(400).send("unable to update database");
+          });
+    }
+
   });
 });
 
