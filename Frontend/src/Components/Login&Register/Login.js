@@ -66,7 +66,7 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <div className="container" style={{ maxWidth: "40%"}}>
+            <div className="container" style={{ maxWidth: "35%"}}>
                 <div className=" h-100">
                     <h3 align="center">Login</h3>
                             <form onSubmit={this.onSubmit}>
@@ -86,7 +86,10 @@ export default class Login extends React.Component {
                                            }
                                            required/>
                                 </div>
-                                <button type="submit" className="btn btn-primary btn-block">Login</button>
+                                <br/>
+                                <div className="container" style={{ width: 300 }}>
+                                    <button type="submit" className="btn btn-primary btn-block"><b>Login</b></button>
+                                </div>
                             </form>
                         <br/>
                         <div className="card-footer">

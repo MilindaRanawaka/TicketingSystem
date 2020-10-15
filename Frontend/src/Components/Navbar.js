@@ -47,7 +47,7 @@ class Navbar extends Component {
 
                             <a className="navbar-brand" href="/">
 
-                                Ticketing System
+                               <b>Ticketing System</b>
                             </a>
                             <div
                                 className="collapse navbar-collapse"

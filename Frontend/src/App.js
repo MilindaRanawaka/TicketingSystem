@@ -20,6 +20,7 @@ import StatisticsPassengerTrips from "./Components/StatisticsTrip.Passenger";
 import Register from "./Components/Login&Register/Register";
 import Footer from "./Components/Footer";
 import AddCredit from "./Components/Credit/AddCredit";
+import PayFine from "./Components/Credit/PayFine";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
               {/*Passenger Only Routes*/}
               <PrivateRoute component={PassengerHomepage} AccessBy={"passenger"} path="/passengerHome" exact />
               <PrivateRoute component={AddCredit} AccessBy={"passenger"} path="/addCredit" exact />
+              <PrivateRoute component={PayFine} AccessBy={"passenger"} path="/payFine" exact />
 
             </Switch>
           </Container>
