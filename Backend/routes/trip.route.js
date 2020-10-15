@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let Trip = require("../models/fines.model");
+let Trip = require("../models/trip.model");
 
 //@route POST
 //@desc Add New Trip
