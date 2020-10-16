@@ -7,11 +7,13 @@ router.route("/add").post((req, res) => {
   const userID = req.body.userID;
   const tripID = req.body.tripID;
   const Fine = req.body.fine;
+  const paidOrNot = req.body.paidOrNot;
 
   const newFine = new Fine({
     userID,
     tripID,
-    Fine
+    Fine,
+    paidOrNot
   });
 
   newFine
