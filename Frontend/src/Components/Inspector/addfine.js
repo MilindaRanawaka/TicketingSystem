@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBMask, MDBView } from "mdbreact";
-import { BrowserRouter as Router } from 'react-router-dom';
 import { Card, CardBody, Col, Row, Table } from "reactstrap";
 import axios from "axios";
 import Calendar from 'react-calendar';
