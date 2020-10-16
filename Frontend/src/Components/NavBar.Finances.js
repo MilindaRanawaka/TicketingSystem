@@ -34,20 +34,25 @@ class FinanceNavBar extends Component {
                         <MDBNavbarNav left>
                             <MDBNavItem active={this.state.activeItem === "1"}
                                         onClick={this.toggle("1")}>
-                                <MDBNavLink to="/financeHome">Finances Per Day</MDBNavLink>
+                                <MDBNavLink to="/financeStat">Finance Statistics</MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem active={this.state.activeItem === "2"}
                                         onClick={this.toggle("2")}>
-                                <MDBNavLink to="/financeRoute">Finances Per Bus Route</MDBNavLink>
+                                <MDBNavLink to="/financeHome">Finances Per Day</MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem active={this.state.activeItem === "3"}
                                         onClick={this.toggle("3")}>
-                                <MDBNavLink to="/financeBus">Finances Per Bus</MDBNavLink>
+                                <MDBNavLink to="/financeRoute">Finances Per Bus Route</MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem active={this.state.activeItem === "4"}
                                         onClick={this.toggle("4")}>
-                                <MDBNavLink to="/financeStat">Finance Statistics</MDBNavLink>
+                                <MDBNavLink to="/financeBus">Finances Per Bus</MDBNavLink>
                             </MDBNavItem>
+                            {/*<MDBNavItem active={this.state.activeItem === "4"}*/}
+                            {/*            onClick={this.toggle("4")}>*/}
+                            {/*    <MDBNavLink to="/financeFine">Finances for Passenger Fine</MDBNavLink>*/}
+                            {/*</MDBNavItem>*/}
+
                         </MDBNavbarNav>
                         <MDBNavbarNav right>
                             <MDBNavItem>

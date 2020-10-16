@@ -23,6 +23,7 @@ import AddCredit from "./Components/Credit/AddCredit";
 import PayFine from "./Components/Credit/PayFine";
 import AddFineInspector from "./Components/Inspector/addfine"
 
+
 function App() {
   return (
     <div className="App">
@@ -42,6 +43,7 @@ function App() {
               {<PrivateRoute component={FinancePerDate} AccessBy={"admin"} path="/financeHome" exact />}
               {<PrivateRoute component={FinancePerRoute} AccessBy={"admin"} path="/financeRoute" exact />}
               {<PrivateRoute component={FinancePerBus} AccessBy={"admin"} path="/financeBus" exact />}
+              {/*{<PrivateRoute component={FinancePerPassengerFine} AccessBy={"admin"} path="/financeFine" exact />}*/}
               {<PrivateRoute component={StatisticsFinances} AccessBy={"admin"} path="/financeStat" exact />}
               {<PrivateRoute component={PassengerRoute} AccessBy={"admin"} path="/passengertrips" exact />}
               {<PrivateRoute component={RoutePassenger} AccessBy={"admin"} path="/route-passenger" exact />}
