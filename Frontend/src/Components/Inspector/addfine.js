@@ -104,7 +104,13 @@ export default class AddFineInspector extends Component {
                                                         <td>{item["startLocation"]}</td>
                                                         <td>{item["endLocation"]}</td>
                                                         <td>{item["charge"]}</td>
-                                                        <td>{item["tripDateTime"]}</td>
+                                                        <td>{new Intl.DateTimeFormat("en-GB", {
+                                                            year: "numeric",
+                                                            month: "long",
+                                                            day: "2-digit",
+                                                            hour: 'numeric',
+                                                            minute: 'numeric'
+                                                        }).format(new Date(item["tripDateTime"]))}</td>
                                                     </tr>
                                                 );
                                             })}
