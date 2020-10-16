@@ -124,7 +124,7 @@ router.route("/update/:id").post((req, res) => {
 });
 
 //@route POST
-//@desc Add Credit specific User using ID
+//@desc Add Passenger specific User using ID
 router.route("/addCredit/:id").post((req, res) => {
   User.findById(req.params.id).then((users) => {
     if (!users) res.status(404).send("data is not found");

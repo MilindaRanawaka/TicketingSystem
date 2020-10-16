@@ -2,15 +2,64 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 import {Card, CardBody, Col, Row, Table} from "reactstrap";
 import FinanceNavBar from "./NavBar.Finances";
+import axios from "axios";
+import {serverUrl} from "./config";
+import {MDBTable, MDBTableHead} from "mdbreact";
 
 class FinancePerBus extends Component {
-    // state = {
-    //     isOpen: false
-    // };
-    //
-    // toggleCollapse = () => {
-    //     this.setState({ isOpen: !this.state.isOpen });
-    // }
+
+    constructor(props) {
+
+        super(props);
+        this.state = {
+
+            trips: [],
+            userInfo: [],
+            busInfo:[],
+
+        };
+    }
+
+    componentDidMount() {
+        axios
+            .get(serverUrl + "/trips/")
+            .then((response) => {
+                this.setState({
+                    trips: response.data,
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    getUsername(id){
+        axios
+            .get(serverUrl + "/users/" + id)
+            .then((response) => {
+                this.setState({
+                    userInfo: response.data,
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+
+    getBusNo(id){
+        axios
+            .get(serverUrl + "/buses/" + id)
+            .then((response) => {
+                this.setState({
+                    busInfo: response.data,
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
 
     render() {
         return (
@@ -20,44 +69,37 @@ class FinancePerBus extends Component {
                     <Col md="12">
                         <Card>
                             <CardBody>
-                                <Table responsive>
-                                    <thead className="text-primary">
+                                <MDBTable hover>
+                                    <MDBTableHead className="text-primary">
                                     <tr>
-                                        <th>Bus Id</th>
-                                        <th>Trip Date</th>
-                                        <th>User Id</th>
-                                        <th>Charge</th>
+                                        <th>Bus No</th>
+                                        <th className="text-center">Trip Date</th>
+                                        <th className="text-center">Passenger Name</th>
+                                        <th className="text-center">Trip Charge (Rs.)</th>
                                     </tr>
-                                    </thead>
+                                    </MDBTableHead>
                                     <tbody>
-                                    <tr>
-                                        <td>Dakota Rice</td>
-                                        <td>15-Oct-2020</td>
-                                        <td>Niger</td>
-                                        <td>Oud-Turnhout</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>Minerva Hooper</td>
-                                        <td>15-Oct-2020</td>
-                                        <td>Curaçao</td>
-                                        <td>Sinaai-Waas</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>Sage Rodriguez</td>
-                                        <td>15-Oct-2020</td>
-                                        <td>Netherlands</td>
-                                        <td>Baileux</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Philip Chaney</td>
-                                        <td>15-Oct-2020</td>
-                                        <td>Korea, South</td>
-                                        <td>Overland Park</td>
-                                    </tr>
+                                    {this.state.trips
+                                        .map((item) => {
+                                            return (
+                                                <tr key={item["_id"]}>
+                                                    {this.getUsername(item["userID"])}
+                                                    {this.getBusNo(item["busID"])}
+                                                    <td>{this.state.busInfo["regNo"]}</td>
+                                                    <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
+                                                        year: "numeric",
+                                                        month: "long",
+                                                        day: "2-digit",
+                                                        hour: 'numeric',
+                                                        minute: 'numeric'
+                                                    }).format(new Date(item["tripDateTime"]))}</td>
+                                                    <td className="text-center">{this.state.userInfo["username"]}</td>
+                                                    <td className="text-center">{item["charge"]}.00</td>
+                                                </tr>
+                                            );
+                                        })}
                                     </tbody>
-                                </Table>
+                                </MDBTable>
                             </CardBody>
                         </Card>
                     </Col>

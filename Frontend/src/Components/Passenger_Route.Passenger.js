@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import {Card, CardBody, Col, Row, Table} from "reactstrap";
 import PassengerTripNavBar from "./NavBar.PassengerTrips";
 
+
 class PassengerRoute extends Component {
     // state = {
     //     isOpen: false

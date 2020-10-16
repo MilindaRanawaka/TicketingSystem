@@ -1,6 +1,7 @@
 import React from 'react';
 import {serverUrl, TOKEN_ID, TOKEN_UNAME} from "./config";
 import axios from "axios";
+import TripHistory from "./Passenger/TripHistory";
 
 export default class PassengerHomepage extends React.Component  {
 
@@ -38,7 +39,7 @@ export default class PassengerHomepage extends React.Component  {
                 <h1 align="center"> <span className="badge badge-dark">
                     Your Account Balance is Rs. {this.state.balance}
                 </span></h1>
-
+                <TripHistory/>
             </div>
         );
     }

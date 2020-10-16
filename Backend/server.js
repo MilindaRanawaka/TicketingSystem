@@ -26,6 +26,9 @@ app.use("/routes", routesRouter);
 const tripsRouter = require("./routes/trip.route");
 app.use("/trips", tripsRouter);
 
+const creditsRouter = require("./routes/credits.route");
+app.use("/credits", creditsRouter);
+
 //MongoDB Connection
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
