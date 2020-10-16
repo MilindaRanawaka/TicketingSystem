@@ -11,20 +11,18 @@ export default class AddCredit extends React.Component {
     constructor(props) {
         super(props);
 
-        this.onChangeAddCredit = this.onChangeAddCredit.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             balance: 0,
-            addingValue: 0
+            addingValue: 0,
+            userID:"",
+            cardHolderName:"",
+            cardNumber:"",
+            expireDate:"",
+            cvvNumber:"",
         };
 
-    }
-
-    onChangeAddCredit(e) {
-        this.setState({
-            addingValue: e.target.value,
-        });
     }
 
     updateInput(key, value) {
@@ -66,6 +64,28 @@ export default class AddCredit extends React.Component {
                 toast("Add credit Failed"+this.props.match.params.id);
 
             });
+
+        const Credit = {
+            userID: localStorage.getItem(TOKEN_ID),
+            cardHolderName: this.state.cardHolderName,
+            cardNumber: this.state.cardNumber,
+            expireDate: this.state.expireDate,
+            cvvNumber: this.state.cvvNumber,
+            amount: this.state.addingValue
+        };
+
+        axios
+            .post(serverUrl + "/credits/add", Credit)
+            .then((res) => console.log(res.data));
+
+        this.setState({
+            cardHolderName: "",
+            cardNumber: "",
+            expireDate: "",
+            cvvNumber: "",
+            addingValue: 0
+        });
+
         window.location='/passengerHome';
     }
 
@@ -123,9 +143,9 @@ export default class AddCredit extends React.Component {
                         <input type="number"
                                className="form-control"
                                placeholder="Amount"
-                               value={this.state.amount}
+                               value={this.state.addingValue}
                                onChange={(e) =>
-                                   this.updateInput("amount", e.target.value)
+                                   this.updateInput("addingValue", e.target.value)
                                }
                                required/>
                     </div>
