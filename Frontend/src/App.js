@@ -19,8 +19,8 @@ import PassengerDate from "./Components/Passenger_Date.Passenger";
 import StatisticsPassengerTrips from "./Components/StatisticsTrip.Passenger";
 import Register from "./Components/Login&Register/Register";
 import Footer from "./Components/Footer";
-import AddCredit from "./Components/Credit/AddCredit";
-import PayFine from "./Components/Credit/PayFine";
+import AddCredit from "./Components/Passenger/AddCredit";
+import PayFine from "./Components/Passenger/PayFine";
 import AddFineInspector from "./Components/Inspector/addfine"
 
 

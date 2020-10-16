@@ -6,7 +6,7 @@ import {serverUrl, TOKEN_ID} from "../config";
 
 toast.configure();
 
-//Add Credit of the System
+//Add Passenger of the System
 export default class PayFine extends React.Component {
     constructor(props) {
         super(props);
