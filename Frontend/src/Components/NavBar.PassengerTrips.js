@@ -34,20 +34,21 @@ class PassengerTripNavBar extends Component {
                 <MDBNavbarNav left>
                     <MDBNavItem active={this.state.activeItem === "1"}
                                 onClick={this.toggle("1")}>
-                        <MDBNavLink to="/passengertrips">Passengers - Bus Routes </MDBNavLink>
+                        <MDBNavLink to="/passengerStat">Passenger Trips Statistics</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem active={this.state.activeItem === "2"}
                                 onClick={this.toggle("2")}>
-                        <MDBNavLink to="/route-passenger">Bus Routes -Passengers</MDBNavLink>
+                        <MDBNavLink to="/passengertrips">Passengers - Bus Routes </MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem active={this.state.activeItem === "3"}
                                 onClick={this.toggle("3")}>
-                        <MDBNavLink to="/passenger-date">Dates - Passengers</MDBNavLink>
+                        <MDBNavLink to="/passenger-bus">Passengers - Buses</MDBNavLink>
                     </MDBNavItem>
-                    <MDBNavItem active={this.state.activeItem === "4"}
-                                onClick={this.toggle("4")}>
-                        <MDBNavLink to="/passengerStat">Passenger Trips Statistics</MDBNavLink>
-                    </MDBNavItem>
+                    {/*<MDBNavItem active={this.state.activeItem === "4"}*/}
+                    {/*            onClick={this.toggle("4")}>*/}
+                    {/*    <MDBNavLink to="/passenger-date">Dates - Passengers</MDBNavLink>*/}
+                    {/*</MDBNavItem>*/}
+
                 </MDBNavbarNav>
                 <MDBNavbarNav right>
                     <MDBNavItem>

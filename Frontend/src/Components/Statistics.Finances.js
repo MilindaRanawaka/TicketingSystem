@@ -3,8 +3,11 @@ import {Bar, Doughnut, HorizontalBar, Pie} from "react-chartjs-2";
 import { Grid, Row, Col } from "react-bootstrap";
 import {MDBCard, MDBCardBody, MDBContainer} from "mdbreact";
 import FinanceNavBar from "./NavBar.Finances";
+import * as axios from "express/lib/request";
+import {serverUrl} from "./config";
 
 class StatisticsFinances extends React.Component {
+
     state = {
         activeItem: "4"
     }
@@ -34,7 +37,6 @@ class StatisticsFinances extends React.Component {
             ]
         }
     }
-
 
     render() {
         return (
