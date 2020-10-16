@@ -50,6 +50,7 @@ export default class PassengerHomepage extends React.Component  {
                     </div>
                 </div>
                 <div className="ms-Grid-row">
+
                     <TripHistory/>
                 </div>
             </div>

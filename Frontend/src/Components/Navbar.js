@@ -94,7 +94,7 @@ class Navbar extends Component {
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
-                                                        <a href="/payFine">
+                                                        <a href="/fineList">
                                                             <button type="button" className="btn btn-primary">Pay Fine</button>
                                                         </a>
                                                     </div>

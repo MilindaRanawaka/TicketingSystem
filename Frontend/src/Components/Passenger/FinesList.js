@@ -4,21 +4,21 @@ import {serverUrl, TOKEN_ID} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 import {Card, CardBody, Col, Row} from "reactstrap";
 
-class TripHistory extends Component {
+class FinesList extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            trips: [],
+            fines: [],
         };
     }
 
     componentDidMount() {
         axios
-            .get(serverUrl + "/trips")
+            .get(serverUrl + "/fines")
             .then((response) => {
                 this.setState({
-                    trips: response.data,
+                    fines: response.data,
                 });
             })
             .catch(function (error) {
@@ -26,13 +26,27 @@ class TripHistory extends Component {
             });
     }
 
-    tripList() {
-        return this.state.trips.map(function (obj, i) {
+    fineList() {
+        return this.state.fines.map(function (obj, i) {
+
+            if (obj.paidOrNot === true) {
+                obj.userID = "Paid";
+            } else {
+                obj.userID = "Not Paid";
+            }
             return (
                 <tr className="text-center" key={i}>
-                    <td>{obj.startLocation}</td>
-                    <td className="text-center">{obj.endLocation}</td>
-                    <td className="text-center">Rs. {obj.charge}.00</td>
+                    <td>{obj._id}</td>
+                    <td className="text-center">Rs. {obj.fine}.00</td>
+                    <td className="text-center"><span className="badge badge-pill badge-primary">{obj.userID}</span></td>
+                    <td>
+                        <a
+                            href={"/payFine/" + obj._id}
+                            className="btn btn-outline-primary btn-sm"
+                        >
+                            Pay
+                        </a>
+                    </td>
                 </tr>
             );
         });
@@ -40,9 +54,8 @@ class TripHistory extends Component {
 
     render() {
         return (
-
-            <div className="container" style={{ marginTop: 30 , maxWidth: "70%"}}>
-                <h3 align="center"><b>Trip History</b></h3>
+            <div className="container" style={{ marginTop: 30 , maxWidth: "90%"}}>
+                <h3 align="center">Fine List</h3>
                 <Row>
                     <Col md="12">
                         <Card>
@@ -50,13 +63,14 @@ class TripHistory extends Component {
                                 <MDBTable hover>
                                     <MDBTableHead className="text-primary">
                                         <tr className="text-center">
-                                            <th>Start Location</th>
-                                            <th>End Location</th>
-                                            <th>Charge</th>
+                                            <th>Fine ID</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
                                         </tr>
                                     </MDBTableHead>
                                     <tbody>
-                                    {this.tripList()}
+                                    {this.fineList()}
                                     </tbody>
                                 </MDBTable>
                             </CardBody>
@@ -68,4 +82,4 @@ class TripHistory extends Component {
     }
 }
 
-export default TripHistory;
+export default FinesList;

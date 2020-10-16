@@ -23,6 +23,7 @@ import PayFine from "./Components/Passenger/PayFine";
 import AddFineInspector from "./Components/Inspector/addfine"
 import AddFineInspectorPage from "./Components/Inspector/addFinePage"
 import PassengerBus from "./Components/Passenger_Bus.Passenger";
+import FinesList from "./Components/Passenger/FinesList";
 
 
 function App() {
@@ -59,7 +60,8 @@ function App() {
               {/*Passenger Only Routes*/}
               <PrivateRoute component={PassengerHomepage} AccessBy={"passenger"} path="/passengerHome" exact />
               <PrivateRoute component={AddCredit} AccessBy={"passenger"} path="/addCredit" exact />
-              <PrivateRoute component={PayFine} AccessBy={"passenger"} path="/payFine" exact />
+              <PrivateRoute component={PayFine} AccessBy={"passenger"} path="/payFine/:id" exact />
+              <PrivateRoute component={FinesList} AccessBy={"passenger"} path="/fineList" exact />
 
             </Switch>
           </Container>
