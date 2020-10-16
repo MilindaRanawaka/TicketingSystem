@@ -28,6 +28,7 @@ export default class AddFineInspectorPage extends Component {
             routeDetails: "",
             dateInput: "",
             fine: "",
+            distance: "",
         }
 
     }
@@ -45,6 +46,7 @@ export default class AddFineInspectorPage extends Component {
                     startLocation: response.data.startLocation,
                     endLocation: response.data.endLocation,
                     charge: response.data.charge,
+                    distance: response.data.distance,
                     tripDateTime: response.data.tripDateTime,
                 });
 
@@ -168,6 +170,11 @@ export default class AddFineInspectorPage extends Component {
                                     Charge
                                 </label>
                                 <input type="text" id="exampleDisabled" className="form-control" placeholder={this.state.charge} disabled />
+                                <br />
+                                <label htmlFor="defaultFormRegisterPasswordEx" className="grey-text">
+                                    Distance
+                                </label>
+                                <input type="text" id="exampleDisabled" className="form-control" placeholder={this.state.distance} disabled />
                                 <br />
                                 <label htmlFor="defaultFormRegisterPasswordEx" className="grey-text">
                                     Trip Date Time

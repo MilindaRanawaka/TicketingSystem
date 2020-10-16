@@ -11,6 +11,7 @@ const tripSchema = new Schema(
     startLocation: { type: String, required: true, trim: true },
     endLocation: { type: String, required: true, trim: true },
     charge: { type: Number, required: true, trim: true },
+    distance: { type: String, required: true, trim: true },
     tripDateTime: { type: Date, required: true, trim: true },
   },
   {

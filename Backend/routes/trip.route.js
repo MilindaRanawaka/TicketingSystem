@@ -11,6 +11,7 @@ router.route("/add").post((req, res) => {
   const startLocation = req.body.startLocation;
   const endLocation = req.body.endLocation;
   const charge = req.body.charge;
+  const distance = req.body.distance;
   const tripDateTime = req.body.tripDateTime;
 
   const newTrip = new Trip({
@@ -20,6 +21,7 @@ router.route("/add").post((req, res) => {
     startLocation,
     endLocation,
     charge,
+    distance,
     tripDateTime
   });
 
