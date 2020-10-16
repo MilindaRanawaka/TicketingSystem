@@ -22,6 +22,7 @@ import Footer from "./Components/Footer";
 import AddCredit from "./Components/Credit/AddCredit";
 import PayFine from "./Components/Credit/PayFine";
 import AddFineInspector from "./Components/Inspector/addfine"
+import AddFineInspectorPage from "./Components/Inspector/addFinePage"
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
               {/*Ticket Inspector Only Routes*/}
               <PrivateRoute component={InspectorHomepage} AccessBy={"inspector"} path="/inspectorHome" exact />
               <PrivateRoute component={AddFineInspector} AccessBy={"inspector"} path="/addFine" exact />
+              <PrivateRoute component={AddFineInspectorPage} AccessBy={"inspector"} path="/addFinePage/:id" exact />
 
               {/*Passenger Only Routes*/}
               <PrivateRoute component={PassengerHomepage} AccessBy={"passenger"} path="/passengerHome" exact />

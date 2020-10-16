@@ -3,7 +3,11 @@ import { MDBContainer, MDBMask, MDBView } from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Card, CardBody, Col, Row, Table } from "reactstrap";
 import axios from "axios";
+import Calendar from 'react-calendar';
 import { TOKEN_UNAME, serverUrl } from "../config";
+import 'react-calendar/dist/Calendar.css';
+
+var count= 0;
 
 export default class AddFineInspector extends Component {
 
@@ -15,6 +19,7 @@ export default class AddFineInspector extends Component {
             busDetails: [],
             userDetails: [],
             routeDetails: [],
+            date: new Date(),
         };
     }
 
@@ -71,14 +76,22 @@ export default class AddFineInspector extends Component {
             });
     }
 
+    onChange = date => this.setState({ date })
+
     render() {
         return (
-            <div className="content">
+            <div className="container">
+
+                <Calendar
+                    onChange={this.onChange}
+                    value={this.state.date}
+                />
+
                 <Row>
                     <Col md="12">
                         <Card>
                             <CardBody>
-                                <Table responsive>
+                                <Table responsive striped>
                                     <thead className="text-primary">
                                         <tr>
                                             <th>Route No</th>
@@ -88,6 +101,7 @@ export default class AddFineInspector extends Component {
                                             <th>End Location</th>
                                             <th>Charge</th>
                                             <th>Trip Date Time</th>
+                                            <th>Add Fine</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -111,12 +125,12 @@ export default class AddFineInspector extends Component {
                                                             hour: 'numeric',
                                                             minute: 'numeric'
                                                         }).format(new Date(item["tripDateTime"]))}</td>
+                                                        <td><a href={"/addFinePage/" + item["_id"]}>Add Fine</a></td>
                                                     </tr>
                                                 );
                                             })}
                                     </tbody>
                                 </Table>
-
                             </CardBody>
                         </Card>
                     </Col>

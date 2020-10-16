@@ -12,6 +12,7 @@ export default class InspectorHomepage extends React.Component  {
             fine: [],
             userDetails: [],
             tripDetails: [],
+            date: new Date(),
         };
     }
 
@@ -65,7 +66,7 @@ export default class InspectorHomepage extends React.Component  {
                     <Col md="12">
                         <Card>
                             <CardBody>
-                                <Table responsive>
+                                <Table responsive striped>
                                     <thead className="text-primary">
                                         <tr>
                                             <th>User Name</th>
@@ -80,9 +81,9 @@ export default class InspectorHomepage extends React.Component  {
                                                 return (
                                                     <tr key={item["_id"]}>
                                                         {this.getTripName(item["tripID"])}
-                                                        {this.getUserName(item["userID"])}
-                                                        <td>{this.state.userDetails["userID"]}</td>
-                                                        <td>{this.state.tripDetails["tripID"]}</td>
+                                                        {this.getUserName(item["userID"])}                                                      
+                                                        <td>{this.state.userDetails["username"]}</td>
+                                                        <td>{this.state.tripDetails["startLocation"]} to {this.state.tripDetails["endLocation"]}</td>
                                                         <td>{item["fine"]}</td>
                                                         <td>{item["paidOrNot"]}</td>
                                                     </tr>
