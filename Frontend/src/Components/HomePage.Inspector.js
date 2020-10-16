@@ -3,7 +3,7 @@ import { Card, CardBody, Col, Row, Table } from "reactstrap";
 import axios from "axios";
 import { TOKEN_UNAME, serverUrl } from "./config";
 
-export default class InspectorHomepage extends React.Component  {
+export default class InspectorHomepage extends React.Component {
 
     constructor(props) {
         super(props);
@@ -62,6 +62,7 @@ export default class InspectorHomepage extends React.Component  {
                 <h1 align="center"> <span className="badge badge-dark">
                     Welcome Inspector {localStorage.getItem(TOKEN_UNAME)}
                 </span></h1>
+                <br />
                 <Row>
                     <Col md="12">
                         <Card>
@@ -81,7 +82,7 @@ export default class InspectorHomepage extends React.Component  {
                                                 return (
                                                     <tr key={item["_id"]}>
                                                         {this.getTripName(item["tripID"])}
-                                                        {this.getUserName(item["userID"])}                                                      
+                                                        {this.getUserName(item["userID"])}
                                                         <td>{this.state.userDetails["username"]}</td>
                                                         <td>{this.state.tripDetails["startLocation"]} to {this.state.tripDetails["endLocation"]}</td>
                                                         <td>{item["fine"]}</td>

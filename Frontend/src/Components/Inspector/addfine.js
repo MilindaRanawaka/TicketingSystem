@@ -7,7 +7,7 @@ import Calendar from 'react-calendar';
 import { TOKEN_UNAME, serverUrl } from "../config";
 import 'react-calendar/dist/Calendar.css';
 
-var count= 0;
+var count = 0;
 
 export default class AddFineInspector extends Component {
 
@@ -81,11 +81,15 @@ export default class AddFineInspector extends Component {
     render() {
         return (
             <div className="container">
-
+                <h1 align="center"> <span className="badge badge-dark">
+                    Add Fine
+                </span></h1>
+                {/*
                 <Calendar
                     onChange={this.onChange}
                     value={this.state.date}
                 />
+        */}
 
                 <Row>
                     <Col md="12">
