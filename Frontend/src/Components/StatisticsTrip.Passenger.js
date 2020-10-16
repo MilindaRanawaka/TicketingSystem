@@ -3,39 +3,124 @@ import {Bar, Pie} from "react-chartjs-2";
 import {MDBCard, MDBCardBody, MDBContainer} from "mdbreact";
 import PassengerTripNavBar from "./NavBar.PassengerTrips";
 import {Col, Row} from "react-bootstrap";
+import axios from "axios";
+import {serverUrl} from "./config";
 
 class StatisticsPassengerTrips extends React.Component {
-    state = {
-        activeItem: "1"
-    }
-    state = {
-        dataPie: {
-            labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
-            datasets: [
-                {
-                    data: [300, 50, 100, 40, 120],
-                    backgroundColor: [
-                        "#F7464A",
-                        "#46BFBD",
-                        "#FDB45C",
-                        "#949FB1",
-                        "#4D5360",
-                        "#AC64AD"
-                    ],
-                    hoverBackgroundColor: [
-                        "#FF5A5E",
-                        "#5AD3D1",
-                        "#FFC870",
-                        "#A8B3C5",
-                        "#616774",
-                        "#DA92DB"
-                    ]
-                }
-            ]
+
+    constructor(props) {
+        super(props);
+
+        this.state={
+            userByType:{}
         }
     }
 
+
+    componentDidMount() {
+
+        axios.get(serverUrl + "/users")
+            .then(response => {
+                this.setState({
+                    users: response.data,
+                })
+
+                const userSet = response.data;
+                this.userByType(userSet);
+
+            })
+
+    }
+
+    userByType(userData) {
+
+        let Type= [];
+        let TypeCounts =[];
+        userData.forEach(element => {
+            if (Type.indexOf(element.type) === -1) {
+                Type.push(element.type);
+            }
+        });
+
+        let usersByType= userData.reduce((countData, user, index) => {
+            if (!!countData[user.type]) {
+                countData[user.type] += 1;
+            } else {
+                countData[user.type] = 1;
+
+            }
+            return countData;
+        }, {})
+        TypeCounts = Object.keys(usersByType).map(user =>{
+
+            return usersByType[user]
+        })
+
+        let categories =['Admin', 'Inspector', 'Passenger'];
+
+        /*
+        Level.map(l =>{
+            switch (l) {
+                case 1: categories.push('admin');break;
+                case 2: categories.push('inspector');break;
+                case 3: categories.push('passenger');break;
+
+            }
+        })
+         */
+
+
+        this.setState({
+            loading:false,
+            userByType : {
+                labels: categories,
+                datasets: [{
+                    label:'Count',
+                    data:TypeCounts,
+                    backgroundColor: [
+                        '#58508d',
+                        '#bc5090',
+                        '#FFCE56'
+                    ],
+                    hoverBackgroundColor: [
+                        '#58508d',
+                        '#bc5090',
+                        '#FFCE56'
+                    ]
+                }]
+            }
+        })
+    }
+
     render() {
+        return (
+                <div className="content">
+                    <PassengerTripNavBar/>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <div className="col statistics">
+                                    <h3>User count by type</h3>
+                                    <Bar data={this.state.userByType}
+                                         options={{
+                                             scales: {
+                                                 yAxes: [{
+                                                     ticks: {
+                                                         beginAtZero: true
+                                                     }
+                                                 }]
+                                             }
+                                         }}/>
+                                </div>
+                            </div>
+                            <div className="col">
+                                <Pie data={this.state.userByType} options={{ responsive: true }} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        );
+        /*
         return (
             <div className="content">
                 <PassengerTripNavBar/>
@@ -58,7 +143,7 @@ class StatisticsPassengerTrips extends React.Component {
                     </Col>
                 </Row>
             </div>
-        );
+        );*/
     }
 }
 
