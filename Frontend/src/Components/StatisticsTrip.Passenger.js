@@ -1,11 +1,12 @@
 import React from "react";
-import { Pie } from "react-chartjs-2";
-import { MDBContainer } from "mdbreact";
+import {Bar, Pie} from "react-chartjs-2";
+import {MDBCard, MDBCardBody, MDBContainer} from "mdbreact";
 import PassengerTripNavBar from "./NavBar.PassengerTrips";
+import {Col, Row} from "react-bootstrap";
 
 class StatisticsPassengerTrips extends React.Component {
     state = {
-        activeItem: "4"
+        activeItem: "1"
     }
     state = {
         dataPie: {
@@ -38,10 +39,24 @@ class StatisticsPassengerTrips extends React.Component {
         return (
             <div className="content">
                 <PassengerTripNavBar/>
-                <MDBContainer>
-                    <h3 className="mt-5">Total Passengers Travelled on 15th-Oct-2020 in various routes</h3>
-                    <Pie data={this.state.dataPie} options={{ responsive: true }} />
-                </MDBContainer>
+                <Row>
+                    <Col xs="6">
+                        <br/>
+                        <MDBCard style={{ width: "40rem" }}>
+                            <MDBCardBody>
+                                <h3 className="mt-5" >Passenger Count for Bus Routes</h3>
+                                <Pie data={this.state.dataPie} options={{ responsive: true }} />
+                            </MDBCardBody>
+                        </MDBCard>
+                    </Col>
+                    <Col xs="6">
+                        <br/>
+                        <MDBCard style={{ width: "40rem" }}>
+                            <h3 className="mt-5">Passenger Count for Buses</h3>
+                            <Bar data={this.state.dataPie} options={{ responsive: true }} />
+                        </MDBCard>
+                    </Col>
+                </Row>
             </div>
         );
     }

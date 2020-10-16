@@ -7,7 +7,7 @@ import {serverUrl} from "./config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 
 
-class PassengerRoute extends Component {
+class PassengerBus extends Component {
     constructor(props) {
 
         super(props);
@@ -82,12 +82,11 @@ class PassengerRoute extends Component {
                             <CardBody>
                                 <MDBTable hover>
                                     <MDBTableHead className="text-primary">
-                                    <tr>
-                                        <th >Passenger Name</th>
-                                        <th className="text-center">Bus Route No</th>
-                                        {/*<th className="text-center">Bus No</th>*/}
-                                        <th className="text-center">Trip Date and Time</th>
-                                    </tr>
+                                        <tr>
+                                            <th >Passenger Name</th>
+                                            <th className="text-center">Bus No</th>
+                                            <th className="text-center">Trip Date and Time</th>
+                                        </tr>
                                     </MDBTableHead>
                                     <tbody>
                                     {this.state.trips
@@ -98,8 +97,7 @@ class PassengerRoute extends Component {
                                                     {this.getRouteNo(item["routeID"])}
                                                     {this.getBusNo(item["busID"])}
                                                     <td >{this.state.userInfo["username"]}</td>
-                                                    <td className="text-center">{this.state.routeInfo["routeNo"]}</td>
-                                                    {/*<td className="text-center">{this.state.busInfo["regNo"]}</td>*/}
+                                                    <td className="text-center">{this.state.busInfo["regNo"]}</td>
                                                     <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",
@@ -121,5 +119,5 @@ class PassengerRoute extends Component {
     }
 }
 
-export default PassengerRoute;
+export default PassengerBus;
 

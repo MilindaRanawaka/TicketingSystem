@@ -14,7 +14,6 @@ import FinancePerRoute from "./Components/PerRoute.Finances";
 import FinancePerBus from "./Components/PerBus.Finances";
 import StatisticsFinances from "./Components/Statistics.Finances";
 import PassengerRoute from "./Components/Passenger_Route.Passenger";
-import RoutePassenger from "./Components/Route_Passenger.Passenger";
 import PassengerDate from "./Components/Passenger_Date.Passenger";
 import StatisticsPassengerTrips from "./Components/StatisticsTrip.Passenger";
 import Register from "./Components/Login&Register/Register";
@@ -23,6 +22,7 @@ import AddCredit from "./Components/Passenger/AddCredit";
 import PayFine from "./Components/Passenger/PayFine";
 import AddFineInspector from "./Components/Inspector/addfine"
 import AddFineInspectorPage from "./Components/Inspector/addFinePage"
+import PassengerBus from "./Components/Passenger_Bus.Passenger";
 
 
 function App() {
@@ -47,7 +47,7 @@ function App() {
               {/*{<PrivateRoute component={FinancePerPassengerFine} AccessBy={"admin"} path="/financeFine" exact />}*/}
               {<PrivateRoute component={StatisticsFinances} AccessBy={"admin"} path="/financeStat" exact />}
               {<PrivateRoute component={PassengerRoute} AccessBy={"admin"} path="/passengertrips" exact />}
-              {<PrivateRoute component={RoutePassenger} AccessBy={"admin"} path="/route-passenger" exact />}
+              {<PrivateRoute component={PassengerBus} AccessBy={"admin"} path="/passenger-bus" exact />}
               {<PrivateRoute component={PassengerDate} AccessBy={"admin"} path="/passenger-date" exact />}
               {<PrivateRoute component={StatisticsPassengerTrips} AccessBy={"admin"} path="/passengerStat" exact />}
 
