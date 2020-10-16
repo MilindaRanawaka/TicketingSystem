@@ -32,15 +32,7 @@ class TripHistory extends Component {
                 <tr className="text-center" key={i}>
                     <td>{obj.startLocation}</td>
                     <td className="text-center">{obj.endLocation}</td>
-                    <td className="text-center">{obj.charge}</td>
-                    <td>
-                        <a
-                            href={"/products/edit/" + obj._id}
-                            className="btn btn-outline-primary btn-sm"
-                        >
-                            Pay
-                        </a>
-                    </td>
+                    <td className="text-center">Rs. {obj.charge}.00</td>
                 </tr>
             );
         });
@@ -48,8 +40,9 @@ class TripHistory extends Component {
 
     render() {
         return (
+
             <div className="container" style={{ marginTop: 30 , maxWidth: "70%"}}>
-                <h3 align="center">Trip History</h3>
+                <h3 align="center"><b>Trip History</b></h3>
                 <Row>
                     <Col md="12">
                         <Card>
@@ -60,7 +53,6 @@ class TripHistory extends Component {
                                             <th>Start Location</th>
                                             <th>End Location</th>
                                             <th>Charge</th>
-                                            <th>Action</th>
                                         </tr>
                                     </MDBTableHead>
                                     <tbody>
