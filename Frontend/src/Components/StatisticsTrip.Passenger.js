@@ -49,6 +49,7 @@ class StatisticsPassengerTrips extends React.Component {
                 countData[user.type] = 1;
 
             }
+
             return countData;
         }, {})
         TypeCounts = Object.keys(usersByType).map(user =>{
@@ -78,14 +79,14 @@ class StatisticsPassengerTrips extends React.Component {
                     label:'Count',
                     data:TypeCounts,
                     backgroundColor: [
-                        '#58508d',
-                        '#bc5090',
-                        '#FFCE56'
+                        "#949FB1",
+                        "#4D5360",
+                        "#AC64AD"
                     ],
                     hoverBackgroundColor: [
-                        '#58508d',
-                        '#bc5090',
-                        '#FFCE56'
+                        "#A8B3C5",
+                        "#616774",
+                        "#DA92DB"
                     ]
                 }]
             }
@@ -96,28 +97,55 @@ class StatisticsPassengerTrips extends React.Component {
         return (
                 <div className="content">
                     <PassengerTripNavBar/>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col">
-                                <div className="col statistics">
-                                    <h3>User count by type</h3>
-                                    <Bar data={this.state.userByType}
-                                         options={{
-                                             scales: {
-                                                 yAxes: [{
-                                                     ticks: {
-                                                         beginAtZero: true
-                                                     }
-                                                 }]
-                                             }
-                                         }}/>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <Pie data={this.state.userByType} options={{ responsive: true }} />
-                            </div>
-                        </div>
-                    </div>
+                    <Row>
+                        <Col xs="6">
+                            <br/>
+                            <MDBCard style={{ width: "40rem" }}>
+                                <MDBCardBody>
+                                    <h3 className="mt-5">User count by User Type</h3>
+                                    <Pie data={this.state.userByType} options={{ responsive: true }} />
+                                </MDBCardBody>
+                            </MDBCard>
+                        </Col>
+                        <Col xs="6">
+                            <br/>
+                            <MDBCard style={{ width: "40rem" }}>
+                                <h3 className="mt-5">User count by User Type</h3>
+                                <Bar data={this.state.userByType}  options={{
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }} />
+                            </MDBCard>
+                        </Col>
+                    </Row>
+
+                    {/*<div className="container">*/}
+                    {/*    <div className="row">*/}
+                    {/*        <div className="col">*/}
+                    {/*            <div className="col statistics">*/}
+                    {/*                <h3>User count by type</h3>*/}
+                    {/*                <Bar data={this.state.userByType}*/}
+                    {/*                     options={{*/}
+                    {/*                         scales: {*/}
+                    {/*                             yAxes: [{*/}
+                    {/*                                 ticks: {*/}
+                    {/*                                     beginAtZero: true*/}
+                    {/*                                 }*/}
+                    {/*                             }]*/}
+                    {/*                         }*/}
+                    {/*                     }}/>*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*        <div className="col">*/}
+                    {/*            <Pie data={this.state.userByType} options={{ responsive: true }} />*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
         );
         /*
