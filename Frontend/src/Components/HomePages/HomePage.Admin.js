@@ -1,5 +1,5 @@
 import React from 'react';
-import {serverUrl, TOKEN_UNAME} from "./config";
+import {serverUrl, TOKEN_UNAME} from "../config";
 import axios from "axios";
 import {Bar} from "react-chartjs-2";
 

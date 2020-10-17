@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import {Card, CardBody, Col, Row} from "reactstrap";
-import PassengerTripNavBar from "./NavBar.PassengerTrips";
+import FinanceNavBar from "./NavBar.Finances";
 import axios from "axios";
-import {serverUrl} from "./config";
+import {serverUrl} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 
-
-class PassengerRoute extends Component {
+class FinancePerRoute extends Component {
     constructor(props) {
 
         super(props);
         this.state = {
 
             trips: [],
+            routeInfo:[],
             userInfo: [],
             busInfo:[],
-            routeInfo:[],
 
         };
     }
@@ -61,7 +60,7 @@ class PassengerRoute extends Component {
             });
     }
 
-    //retrieving route number from routes table
+    //retrieving bus route no from routes table
     getRouteNo(id){
         axios
             .get(serverUrl + "/routes/" + id)
@@ -78,7 +77,7 @@ class PassengerRoute extends Component {
     render() {
         return (
             <div className="content">
-                <PassengerTripNavBar/>
+                <FinanceNavBar/>
                 <Row>
                     <Col md="12">
                         <Card>
@@ -86,9 +85,10 @@ class PassengerRoute extends Component {
                                 <MDBTable hover>
                                     <MDBTableHead className="text-primary">
                                     <tr>
-                                        <th >Passenger Name</th>
-                                        <th className="text-center">Bus Route No</th>
-                                        <th className="text-center">Trip Date and Time</th>
+                                        <th>Bus Route Id</th>
+                                        <th className="text-center">Trip Date</th>
+                                        <th className="text-center">Passenger Name</th>
+                                        <th className="text-center">Trip Charge (Rs.)</th>
                                     </tr>
                                     </MDBTableHead>
                                     <tbody>
@@ -96,8 +96,7 @@ class PassengerRoute extends Component {
                                         .map((item) => {
                                             return (
                                                 <tr key={item["_id"]}>
-                                                    <td >{item["userName"]}</td>
-                                                    <td className="text-center">{item["routeNo"]}</td>
+                                                    <td>{item["routeNo"]}</td>
                                                     <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",
@@ -105,6 +104,8 @@ class PassengerRoute extends Component {
                                                         hour: 'numeric',
                                                         minute: 'numeric'
                                                     }).format(new Date(item["tripDateTime"]))}</td>
+                                                    <td className="text-center">{item["userName"]}</td>
+                                                    <td className="text-center">{item["charge"]}.00</td>
                                                 </tr>
                                             );
                                         })}
@@ -119,5 +120,5 @@ class PassengerRoute extends Component {
     }
 }
 
-export default PassengerRoute;
+export default FinancePerRoute;
 

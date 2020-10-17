@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import {Card, CardBody, Col, Row} from "reactstrap";
-import { MDBTable, MDBTableHead } from 'mdbreact';
 import FinanceNavBar from "./NavBar.Finances";
-import axios from 'axios';
-import {serverUrl} from "./config";
+import axios from "axios";
+import {serverUrl} from "../config";
+import {MDBTable, MDBTableHead} from "mdbreact";
 
-
-class FinancePerDate extends Component {
+class FinancePerBus extends Component {
 
     constructor(props) {
 
@@ -14,7 +13,8 @@ class FinancePerDate extends Component {
         this.state = {
 
             trips: [],
-            userDetails: [],
+            userInfo: [],
+            busInfo:[],
 
         };
     }
@@ -38,13 +38,28 @@ class FinancePerDate extends Component {
             .get(serverUrl + "/users/" + id)
             .then((response) => {
                 this.setState({
-                    userDetails: response.data,
+                    userInfo: response.data,
                 });
             })
             .catch((error) => {
                 console.log(error);
             });
     }
+
+    //retrieving bus reg no from buses table
+    getBusNo(id){
+        axios
+            .get(serverUrl + "/buses/" + id)
+            .then((response) => {
+                this.setState({
+                    busInfo: response.data,
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
 
     render() {
         return (
@@ -57,17 +72,21 @@ class FinancePerDate extends Component {
                                 <MDBTable hover>
                                     <MDBTableHead className="text-primary">
                                     <tr>
-                                        <th>Trip Date</th>
+                                        <th>Bus No</th>
+                                        <th className="text-center" >Trip Date</th>
                                         <th className="text-center">Passenger Name</th>
-                                        <th className="text-center">Trip Charge</th>
-                                    </tr >
+                                        <th className="text-center">Trip Charge (Rs.)</th>
+                                    </tr>
                                     </MDBTableHead>
                                     <tbody>
                                     {this.state.trips
                                         .map((item) => {
                                             return (
                                                 <tr key={item["_id"]}>
-                                                    <td >{new Intl.DateTimeFormat("en-GB", {
+                                                    {this.getUsername(item["userID"])}
+                                                    {this.getBusNo(item["busID"])}
+                                                    <td>{this.state.busInfo["regNo"]}</td>
+                                                    <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",
                                                         day: "2-digit",
@@ -90,8 +109,5 @@ class FinancePerDate extends Component {
     }
 }
 
-export default FinancePerDate;
-
-
-
+export default FinancePerBus;
 

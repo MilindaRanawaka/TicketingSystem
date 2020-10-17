@@ -1,10 +1,10 @@
 import React from 'react';
-import {serverUrl, TOKEN_ID, TOKEN_UNAME} from "./config";
+import {serverUrl, TOKEN_ID, TOKEN_UNAME} from "../config";
 import axios from "axios";
-import TripHistory from "./Passenger/TripHistory";
-import CardSection from "./Passenger/Card/CardSection";
+import TripHistory from "../Passenger/TripHistory";
+import CardSection from "../Passenger/Card/CardSection";
 import 'office-ui-fabric-react/dist/css/fabric.css';
-import FinesList from "./Passenger/FinesList";
+import FinesList from "../Passenger/FinesList";
 
 //Passenger Dashboard
 export default class PassengerHomepage extends React.Component  {

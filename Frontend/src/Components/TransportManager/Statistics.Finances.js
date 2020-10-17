@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import {MDBCard, MDBCardBody} from "mdbreact";
 import FinanceNavBar from "./NavBar.Finances";
 import axios from "axios";
-import {serverUrl} from "./config";
+import {serverUrl} from "../config";
 
 class StatisticsFinances extends React.Component {
 
