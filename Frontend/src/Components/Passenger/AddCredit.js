@@ -30,7 +30,8 @@ export default class AddCredit extends React.Component {
             [key]: value,
         });
     }
-
+    
+    //url from backend
     componentDidMount() {
         axios
             .get(serverUrl + "/users/" + localStorage.getItem(TOKEN_ID))
