@@ -93,7 +93,7 @@ class FinancePerBus extends Component {
                                                         hour: 'numeric',
                                                         minute: 'numeric'
                                                     }).format(new Date(item["tripDateTime"]))}</td>
-                                                    <td className="text-center">{this.state.userInfo["userName"]}</td>
+                                                    <td className="text-center">{item["userName"]}</td>
                                                     <td className="text-center">{item["charge"]}.00</td>
                                                 </tr>
                                             );

@@ -55,8 +55,6 @@ class FinancePerDate extends Component {
                             <CardBody>
                                 <MDBTable hover>
                                     <MDBTableHead className="text-primary">
-                                    {/*<thead className="text-primary">*/}
-
                                     <tr>
                                         <th>Trip Date</th>
                                         <th className="text-center">Passenger Name</th>
