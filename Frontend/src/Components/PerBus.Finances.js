@@ -33,6 +33,7 @@ class FinancePerBus extends Component {
             });
     }
 
+    //retrieving username from users table
     getUsername(id){
         axios
             .get(serverUrl + "/users/" + id)
@@ -46,7 +47,7 @@ class FinancePerBus extends Component {
             });
     }
 
-
+    //retrieving bus reg no from buses table
     getBusNo(id){
         axios
             .get(serverUrl + "/buses/" + id)
@@ -73,7 +74,7 @@ class FinancePerBus extends Component {
                                     <MDBTableHead className="text-primary">
                                     <tr>
                                         <th>Bus No</th>
-                                        <th className="text-center">Trip Date</th>
+                                        <th className="text-center" >Trip Date</th>
                                         <th className="text-center">Passenger Name</th>
                                         <th className="text-center">Trip Charge (Rs.)</th>
                                     </tr>

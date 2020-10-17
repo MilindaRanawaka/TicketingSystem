@@ -64,7 +64,7 @@ class StatisticsFinances extends React.Component {
     }
 
 
-    //getting all the routes and their respective total charges
+    //getting all the routes and their respective total fare charges
     routeType(routeData) {
 
         let Type = [];
@@ -141,7 +141,7 @@ class StatisticsFinances extends React.Component {
         }
     }
 
-//getting all the buses and their respective total charges
+ //getting all the buses and their respective total fare charges
     busType(busData) {
 
         let bType = [];

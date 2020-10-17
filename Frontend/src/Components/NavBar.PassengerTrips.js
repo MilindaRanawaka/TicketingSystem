@@ -3,14 +3,6 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBFor
 
 
 class PassengerTripNavBar extends Component {
-    // state = {
-    //     isOpen: false
-    // };
-    //
-    // toggleCollapse = () => {
-    //     this.setState({ isOpen: !this.state.isOpen });
-    // }
-
     state = {
         activeItem: "1"
     }
@@ -29,8 +21,6 @@ class PassengerTripNavBar extends Component {
                 <MDBNavbarBrand>
                     <strong className="white-text">Passenger Trips Info</strong>
                 </MDBNavbarBrand>
-                {/*<MDBNavbarToggler onClick={this.toggleCollapse} />*/}
-                {/*<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>*/}
                 <MDBNavbarNav left>
                     <MDBNavItem active={this.state.activeItem === "1"}
                                 onClick={this.toggle("1")}>
@@ -44,11 +34,6 @@ class PassengerTripNavBar extends Component {
                                 onClick={this.toggle("3")}>
                         <MDBNavLink to="/passenger-bus">Passengers - Buses</MDBNavLink>
                     </MDBNavItem>
-                    {/*<MDBNavItem active={this.state.activeItem === "4"}*/}
-                    {/*            onClick={this.toggle("4")}>*/}
-                    {/*    <MDBNavLink to="/passenger-date">Dates - Passengers</MDBNavLink>*/}
-                    {/*</MDBNavItem>*/}
-
                 </MDBNavbarNav>
                 <MDBNavbarNav right>
                     <MDBNavItem>
@@ -68,9 +53,7 @@ class PassengerTripNavBar extends Component {
                         <MDBNavLink to='#!'>Search</MDBNavLink>
                     </MDBNavItem>
                 </MDBNavbarNav>
-                {/*</MDBCollapse>*/}
             </MDBNavbar>
-
         );
     }
 }

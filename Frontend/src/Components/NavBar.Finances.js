@@ -3,14 +3,6 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBFor
 
 
 class FinanceNavBar extends Component {
-    // state = {
-    //     isOpen: false
-    // };
-    //
-    // toggleCollapse = () => {
-    //     this.setState({ isOpen: !this.state.isOpen });
-    // }
-
     state = {
         activeItem: "1"
     }
@@ -24,13 +16,10 @@ class FinanceNavBar extends Component {
     }
     render() {
         return (
-
                 <MDBNavbar color="primary-color" dark expand="md">
                     <MDBNavbarBrand>
                         <strong className="white-text">Finance Plan</strong>
                     </MDBNavbarBrand>
-                    {/*<MDBNavbarToggler onClick={this.toggleCollapse} />*/}
-                    {/*<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>*/}
                         <MDBNavbarNav left>
                             <MDBNavItem active={this.state.activeItem === "1"}
                                         onClick={this.toggle("1")}>
@@ -48,11 +37,6 @@ class FinanceNavBar extends Component {
                                         onClick={this.toggle("4")}>
                                 <MDBNavLink to="/financeBus">Finances Per Bus</MDBNavLink>
                             </MDBNavItem>
-                            {/*<MDBNavItem active={this.state.activeItem === "4"}*/}
-                            {/*            onClick={this.toggle("4")}>*/}
-                            {/*    <MDBNavLink to="/financeFine">Finances for Passenger Fine</MDBNavLink>*/}
-                            {/*</MDBNavItem>*/}
-
                         </MDBNavbarNav>
                         <MDBNavbarNav right>
                             <MDBNavItem>
@@ -72,9 +56,7 @@ class FinanceNavBar extends Component {
                                 <MDBNavLink to='#!'>Search</MDBNavLink>
                             </MDBNavItem>
                         </MDBNavbarNav>
-                    {/*</MDBCollapse>*/}
                 </MDBNavbar>
-
         );
     }
 }

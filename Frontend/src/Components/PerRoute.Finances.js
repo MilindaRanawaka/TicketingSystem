@@ -33,6 +33,7 @@ class FinancePerRoute extends Component {
             });
     }
 
+    //retrieving username from users table
     getUsername(id){
         axios
             .get(serverUrl + "/users/" + id)
@@ -46,6 +47,7 @@ class FinancePerRoute extends Component {
             });
     }
 
+    //retrieving bus reg no from buses table
     getBusNo(id){
         axios
             .get(serverUrl + "/buses/" + id)
@@ -59,7 +61,7 @@ class FinancePerRoute extends Component {
             });
     }
 
-
+    //retrieving bus route no from routes table
     getRouteNo(id){
         axios
             .get(serverUrl + "/routes/" + id)

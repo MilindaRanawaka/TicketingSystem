@@ -27,6 +27,8 @@ export default class AdminHomepage extends React.Component  {
 
             })
     }
+
+    //retrieving all users by user type
     userByType(userData) {
 
         let Type= [];
@@ -53,18 +55,6 @@ export default class AdminHomepage extends React.Component  {
         })
 
         let categories =['Public Transport Manager (Admin)', 'Ticket Inspector', 'Passenger'];
-
-        /*
-        Level.map(l =>{
-            switch (l) {
-                case 1: categories.push('admin');break;
-                case 2: categories.push('inspector');break;
-                case 3: categories.push('passenger');break;
-
-            }
-        })
-         */
-
 
         this.setState({
             loading:false,
@@ -95,7 +85,6 @@ export default class AdminHomepage extends React.Component  {
                     Welcome Admin {localStorage.getItem(TOKEN_UNAME)}
                 </span></h1>
                         <br/>
-
                             <h3 className="mt-5">User Count by User Type</h3>
                             <Bar data={this.state.userByType}  options={{
                                 scales: {
@@ -106,9 +95,6 @@ export default class AdminHomepage extends React.Component  {
                                     }]
                                 }
                             }} />
-
-
-
             </div>
         );
     }

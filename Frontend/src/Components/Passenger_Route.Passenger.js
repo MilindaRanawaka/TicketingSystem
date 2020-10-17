@@ -34,6 +34,7 @@ class PassengerRoute extends Component {
             });
     }
 
+    //retrieving username from users table
     getUsername(id){
         axios
             .get(serverUrl + "/users/" + id)
@@ -47,6 +48,7 @@ class PassengerRoute extends Component {
             });
     }
 
+    //retrieving bus reg no from buses table
     getBusNo(id){
         axios
             .get(serverUrl + "/buses/" + id)
@@ -59,6 +61,8 @@ class PassengerRoute extends Component {
                 console.log(error);
             });
     }
+
+    //retrieving route number from routes table
     getRouteNo(id){
         axios
             .get(serverUrl + "/routes/" + id)
@@ -85,7 +89,6 @@ class PassengerRoute extends Component {
                                     <tr>
                                         <th >Passenger Name</th>
                                         <th className="text-center">Bus Route No</th>
-                                        {/*<th className="text-center">Bus No</th>*/}
                                         <th className="text-center">Trip Date and Time</th>
                                     </tr>
                                     </MDBTableHead>
@@ -96,7 +99,6 @@ class PassengerRoute extends Component {
                                                 <tr key={item["_id"]}>
                                                     <td >{item["userName"]}</td>
                                                     <td className="text-center">{item["routeNo"]}</td>
-                                                    {/*<td className="text-center">{this.state.busInfo["regNo"]}</td>*/}
                                                     <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",

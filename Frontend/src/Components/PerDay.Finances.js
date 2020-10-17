@@ -32,6 +32,7 @@ class FinancePerDate extends Component {
             });
     }
 
+    //retrieving username from users table
     getUsername(id){
         axios
             .get(serverUrl + "/users/" + id)

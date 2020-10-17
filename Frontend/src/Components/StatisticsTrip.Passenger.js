@@ -101,16 +101,6 @@ class StatisticsPassengerTrips extends React.Component {
 
         let categories =['Admin', 'Inspector', 'Passenger'];
 
-        /*
-        Level.map(l =>{
-            switch (l) {
-                case 1: categories.push('admin');break;
-                case 2: categories.push('inspector');break;
-                case 3: categories.push('passenger');break;
-            }
-        })
-         */
-
 
         this.setState({
             loading:false,
@@ -318,55 +308,8 @@ class StatisticsPassengerTrips extends React.Component {
                             </MDBCard>
                         </Col>
                     </Row>
-
-                    {/*<div className="container">*/}
-                    {/*    <div className="row">*/}
-                    {/*        <div className="col">*/}
-                    {/*            <div className="col statistics">*/}
-                    {/*                <h3>User count by type</h3>*/}
-                    {/*                <Bar data={this.state.userByType}*/}
-                    {/*                     options={{*/}
-                    {/*                         scales: {*/}
-                    {/*                             yAxes: [{*/}
-                    {/*                                 ticks: {*/}
-                    {/*                                     beginAtZero: true*/}
-                    {/*                                 }*/}
-                    {/*                             }]*/}
-                    {/*                         }*/}
-                    {/*                     }}/>*/}
-                    {/*            </div>*/}
-                    {/*        </div>*/}
-                    {/*        <div className="col">*/}
-                    {/*            <Pie data={this.state.userByType} options={{ responsive: true }} />*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
                 </div>
         );
-        /*
-        return (
-            <div className="content">
-                <PassengerTripNavBar/>
-                <Row>
-                    <Col xs="6">
-                        <br/>
-                        <MDBCard style={{ width: "40rem" }}>
-                            <MDBCardBody>
-                                <h3 className="mt-5" >Passenger Count for Bus Routes</h3>
-                                <Pie data={this.state.dataPie} options={{ responsive: true }} />
-                            </MDBCardBody>
-                        </MDBCard>
-                    </Col>
-                    <Col xs="6">
-                        <br/>
-                        <MDBCard style={{ width: "40rem" }}>
-                            <h3 className="mt-5">Passenger Count for Buses</h3>
-                            <Bar data={this.state.dataPie} options={{ responsive: true }} />
-                        </MDBCard>
-                    </Col>
-                </Row>
-            </div>
-        );*/
     }
 }
 
