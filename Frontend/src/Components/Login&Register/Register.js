@@ -107,6 +107,7 @@ class Register extends Component {
                         <input type="text"
                                className="form-control"
                                placeholder="Phone No"
+                               id="phonenoid"
                                value={this.state.phoneNo}
                                onChange={(e) =>
                                    this.updateInput("phoneNo", e.target.value)
@@ -119,6 +120,7 @@ class Register extends Component {
                             placeholder="Address"
                             rows="1"
                             className="form-control"
+                            id="address"
                             value={this.state.address}
                             onChange={(e) =>
                                 this.updateInput("address", e.target.value)
@@ -168,6 +170,7 @@ class Register extends Component {
                         <input type="password"
                                className="form-control"
                                placeholder="Password"
+                               id="passwordId"
                                value={this.state.password}
                                onChange={(e) =>
                                    this.updateInput("password", e.target.value)
