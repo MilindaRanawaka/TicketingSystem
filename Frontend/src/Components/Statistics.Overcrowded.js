@@ -216,7 +216,6 @@ class StatisticsOvercrowded extends React.Component {
     userByRoute(userRouteData) {
 
         let rType = [];
-        let TypeCounts = [];
         userRouteData.forEach(element => {
             if (rType.indexOf(element.routeID) === -1) {
                 rType.push(element.routeID);
