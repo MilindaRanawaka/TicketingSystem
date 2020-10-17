@@ -93,11 +93,8 @@ class PassengerBus extends Component {
                                         .map((item) => {
                                             return (
                                                 <tr key={item["_id"]}>
-                                                    {this.getUsername(item["userID"])}
-                                                    {this.getRouteNo(item["routeID"])}
-                                                    {this.getBusNo(item["busID"])}
-                                                    <td >{this.state.userInfo["username"]}</td>
-                                                    <td className="text-center">{this.state.busInfo["regNo"]}</td>
+                                                    <td >{item["userName"]}</td>
+                                                    <td className="text-center">{item["regNo"]}</td>
                                                     <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",

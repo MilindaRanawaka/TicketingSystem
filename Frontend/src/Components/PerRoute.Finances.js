@@ -95,9 +95,7 @@ class FinancePerRoute extends Component {
                                         .map((item) => {
                                             return (
                                                 <tr key={item["_id"]}>
-                                                    {this.getUsername(item["userID"])}
-                                                    {this.getRouteNo(item["routeID"])}
-                                                    <td>{this.state.routeInfo["routeNo"]}</td>
+                                                    <td>{item["routeNo"]}</td>
                                                     <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",
@@ -105,7 +103,7 @@ class FinancePerRoute extends Component {
                                                         hour: 'numeric',
                                                         minute: 'numeric'
                                                     }).format(new Date(item["tripDateTime"]))}</td>
-                                                    <td className="text-center">{this.state.userInfo["username"]}</td>
+                                                    <td className="text-center">{item["userName"]}</td>
                                                     <td className="text-center">{item["charge"]}.00</td>
                                                 </tr>
                                             );

@@ -68,7 +68,6 @@ class FinancePerDate extends Component {
                                         .map((item) => {
                                             return (
                                                 <tr key={item["_id"]}>
-                                                    {this.getUsername(item["userID"])}
                                                     <td >{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",
@@ -76,7 +75,7 @@ class FinancePerDate extends Component {
                                                         hour: 'numeric',
                                                         minute: 'numeric'
                                                     }).format(new Date(item["tripDateTime"]))}</td>
-                                                    <td className="text-center">{this.state.userDetails["username"]}</td>
+                                                    <td className="text-center">{item["userName"]}</td>
                                                     <td className="text-center">{item["charge"]}.00</td>
                                                 </tr>
                                             );
