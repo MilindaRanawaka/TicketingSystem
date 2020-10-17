@@ -65,7 +65,7 @@ class FinesList extends Component {
     render() {
         return (
             <div className="container" style={{ marginTop: 30 , maxWidth: "75%"}}>
-                <h3 align="center"><b>Fines List</b></h3>
+                <br/><h3 align="center"><b>Fines List</b></h3><br/>
                 <Row>
                     <Col md="12">
                         <Card>

@@ -95,6 +95,44 @@ export default class AddCredit extends React.Component {
                 <h3 align="center"><b>Add Credit to Account</b></h3><br/>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
+                        <label className="control-label">Card Type</label>
+                        <div className="row">
+                            <div className="col-md-auto">
+                                <div className="form-check">
+                                    <input
+                                        type="radio"
+                                        id="creditRadio"
+                                        name="cardType"
+                                        value="CreditCard"
+                                        onChange={(e) =>
+                                            this.updateInput("cardType", e.target.value)
+                                        }
+                                        required
+                                    />
+                                    <label className="form-check-label" htmlFor="exampleRadios1">
+                                        Credit Card
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="col-md-auto">
+                                <div className="form-check">
+                                    <input
+                                        type="radio"
+                                        id="debitRadio"
+                                        name="cardType"
+                                        value="DebitCard"
+                                        onChange={(e) =>
+                                            this.updateInput("cardType", e.target.value)
+                                        }
+                                    />
+                                    <label className="form-check-label" htmlFor="exampleRadios2">
+                                        Debit Card
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="form-group">
                         <label>Card Holder Name</label>
                         <input type="text"
                                className="form-control"

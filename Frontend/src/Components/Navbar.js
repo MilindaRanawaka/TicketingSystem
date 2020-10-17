@@ -108,6 +108,11 @@ class Navbar extends Component {
                                                             <button type="button" className="btn btn-primary">Trip History</button>
                                                         </a>
                                                     </div>
+                                                    <div className="col-md-auto">
+                                                        <a href="/creditHistory">
+                                                            <button type="button" className="btn btn-primary">Credit History</button>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         ) : (
