@@ -24,6 +24,7 @@ import AddFineInspector from "./Components/Inspector/addfine"
 import AddFineInspectorPage from "./Components/Inspector/addFinePage"
 import PassengerBus from "./Components/Passenger_Bus.Passenger";
 import FinesList from "./Components/Passenger/FinesList";
+import TripHistory from "./Components/Passenger/TripHistory";
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
               <PrivateRoute component={AddCredit} AccessBy={"passenger"} path="/addCredit" exact />
               <PrivateRoute component={PayFine} AccessBy={"passenger"} path="/payFine/:id" exact />
               <PrivateRoute component={FinesList} AccessBy={"passenger"} path="/fineList" exact />
+              <PrivateRoute component={TripHistory} AccessBy={"passenger"} path="/viewHistory" exact />
 
             </Switch>
           </Container>

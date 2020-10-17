@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
-import {serverUrl, TOKEN_ID, TOKEN_TYPE} from "../config";
+import {serverUrl} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 import {Card, CardBody, Col, Row} from "reactstrap";
 
@@ -37,6 +37,7 @@ class FinesList extends Component {
             return (
                 <tr className="text-center" key={i}>
                     <td>{obj._id}</td>
+                    <td>{obj.Location}</td>
                     <td className="text-center">Rs. {obj.fine}.00</td>
                     <td className="text-center"><span className="badge badge-pill badge-primary">{paid}</span></td>
                     <td>{
@@ -63,8 +64,8 @@ class FinesList extends Component {
 
     render() {
         return (
-            <div className="container" style={{ marginTop: 30 , maxWidth: "90%"}}>
-                <h3 align="center"><b>Fine List</b></h3>
+            <div className="container" style={{ marginTop: 30 , maxWidth: "75%"}}>
+                <h3 align="center"><b>Fines List</b></h3>
                 <Row>
                     <Col md="12">
                         <Card>
@@ -73,6 +74,7 @@ class FinesList extends Component {
                                     <MDBTableHead className="text-primary">
                                         <tr className="text-center">
                                             <th>Fine ID</th>
+                                            <th>Locations</th>
                                             <th>Amount</th>
                                             <th>Status</th>
                                             <th>Action</th>

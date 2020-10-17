@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TOKEN_UNAME, TOKEN_ID, TOKEN_TYPE} from "./config";
+import {TOKEN_UNAME, TOKEN_TYPE} from "./config";
 import { isLogin, logout } from "./ReactMiddleware/reactAuth";
 import { Link } from "react-router-dom";
 
@@ -95,12 +95,12 @@ class Navbar extends Component {
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/fineList">
-                                                            <button type="button" className="btn btn-primary">Pay Fine</button>
+                                                            <button type="button" className="btn btn-primary">Fines List</button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/viewHistory">
-                                                            <button type="button" className="btn btn-primary">View History</button>
+                                                            <button type="button" className="btn btn-primary">Trip History</button>
                                                         </a>
                                                     </div>
                                                 </div>

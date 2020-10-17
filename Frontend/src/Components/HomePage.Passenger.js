@@ -53,11 +53,15 @@ export default class PassengerHomepage extends React.Component  {
                 <div className="container" style={{ maxWidth: "95%"}}>
                     <div className="row">
                         <div className="col">
-                            <TripHistory/>
-                        </div>
-                        <div className="col">
                             <FinesList/>
                         </div>
+
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <TripHistory/>
+                        </div>
+
                     </div>
                 </div>
             </div>
