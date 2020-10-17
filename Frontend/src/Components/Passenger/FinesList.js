@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
-import {serverUrl, TOKEN_ID} from "../config";
+import {serverUrl, TOKEN_ID, TOKEN_TYPE} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 import {Card, CardBody, Col, Row} from "reactstrap";
 
@@ -10,6 +10,7 @@ class FinesList extends Component {
 
         this.state = {
             fines: [],
+            paid: ""
         };
     }
 
@@ -29,23 +30,31 @@ class FinesList extends Component {
     fineList() {
         return this.state.fines.map(function (obj, i) {
 
-            if (obj.paidOrNot === true) {
-                obj.userID = "Paid";
-            } else {
-                obj.userID = "Not Paid";
-            }
+
+              let paid = obj.paidOrNot;
+
+
             return (
                 <tr className="text-center" key={i}>
                     <td>{obj._id}</td>
                     <td className="text-center">Rs. {obj.fine}.00</td>
-                    <td className="text-center"><span className="badge badge-pill badge-primary">{obj.userID}</span></td>
-                    <td>
-                        <a
-                            href={"/payFine/" + obj._id}
-                            className="btn btn-outline-primary btn-sm"
-                        >
-                            Pay
-                        </a>
+                    <td className="text-center"><span className="badge badge-pill badge-primary">{paid}</span></td>
+                    <td>{
+                        paid === "Not Paid" ? (
+
+                                <a
+                                    href={"/payFine/" + obj._id}
+                                    className="btn btn-outline-primary btn-sm"
+                                >
+                                    Pay
+                                </a>
+
+
+                        ): (
+                            <button disabled className="btn btn-sm btn-outline-primary "
+                                    type="submit">Pay</button>
+                        )
+                    }
                     </td>
                 </tr>
             );
@@ -55,7 +64,7 @@ class FinesList extends Component {
     render() {
         return (
             <div className="container" style={{ marginTop: 30 , maxWidth: "90%"}}>
-                <h3 align="center">Fine List</h3>
+                <h3 align="center"><b>Fine List</b></h3>
                 <Row>
                     <Col md="12">
                         <Card>

@@ -50,5 +50,26 @@ router.route("/:id").delete((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+//@route POST
+//@desc Edit paidOrNot specific User using ID
+router.route("/editFine/:id").post((req, res) => {
+  Fine.findById(req.params.id).then((fines) => {
+    if (!fines) res.status(404).send("data is not found");
+    else {
+      fines.paidOrNot = req.body.paidOrNot;
+
+      fines
+          .save()
+          .then((product) => {
+            res.json("Fine Paid Successfully!");
+          })
+          .catch((err) => {
+            res.status(400).send("unable to update database");
+          });
+    }
+
+  });
+});
+
 //Export User Route
 module.exports = router;

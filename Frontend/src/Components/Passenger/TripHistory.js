@@ -43,8 +43,6 @@ class TripHistory extends Component {
 
             <div className="container" style={{ marginTop: 30 , maxWidth: "70%"}}>
                 <h3 align="center"><b>Trip History</b></h3>
-                <Row>
-                    <Col md="12">
                         <Card>
                             <CardBody>
                                 <MDBTable hover>
@@ -61,8 +59,6 @@ class TripHistory extends Component {
                                 </MDBTable>
                             </CardBody>
                         </Card>
-                    </Col>
-                </Row>
             </div>
         );
     }

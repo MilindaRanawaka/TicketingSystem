@@ -4,6 +4,7 @@ import axios from "axios";
 import TripHistory from "./Passenger/TripHistory";
 import CardSection from "./Passenger/Card/CardSection";
 import 'office-ui-fabric-react/dist/css/fabric.css';
+import FinesList from "./Passenger/FinesList";
 
 export default class PassengerHomepage extends React.Component  {
 
@@ -49,9 +50,15 @@ export default class PassengerHomepage extends React.Component  {
                         </div>
                     </div>
                 </div>
-                <div className="ms-Grid-row">
-
-                    <TripHistory/>
+                <div className="container" style={{ maxWidth: "95%"}}>
+                    <div className="row">
+                        <div className="col">
+                            <TripHistory/>
+                        </div>
+                        <div className="col">
+                            <FinesList/>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
