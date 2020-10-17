@@ -43,7 +43,7 @@ class CreditHistory extends Component {
         return (
 
             <div className="container" style={{ marginTop: 30 , maxWidth: "75%"}}>
-                <br/>
+                <br/><br/> <br/><br/>
                 <h3 align="center"><b>Credit History</b></h3><br/>
                         <Card>
                             <CardBody>
