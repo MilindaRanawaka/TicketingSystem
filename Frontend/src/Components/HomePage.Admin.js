@@ -1,8 +1,6 @@
 import React from 'react';
 import {serverUrl, TOKEN_UNAME} from "./config";
 import axios from "axios";
-import {Col, Row} from "react-bootstrap";
-import {MDBCard} from "mdbreact";
 import {Bar} from "react-chartjs-2";
 
 export default class AdminHomepage extends React.Component  {

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBox, MDBBtn } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import axios from "axios";
-import Calendar from 'react-calendar';
-import { TOKEN_UNAME, serverUrl } from "../config";
+import { serverUrl } from "../config";
 import "./addFinePage.css";
 import { toast } from "react-toastify";
 
