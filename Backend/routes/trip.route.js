@@ -6,8 +6,11 @@ let Trip = require("../models/trip.model");
 router.route("/add").post((req, res) => {
 
   const routeID = req.body.routeID;
+  const routeNo = req.body.routeNo;
   const busID = req.body.busID;
+  const busRegNo = req.body.busRegNo;
   const userID = req.body.userID;
+  const userName = req.body.userName;
   const startLocation = req.body.startLocation;
   const endLocation = req.body.endLocation;
   const charge = req.body.charge;
@@ -16,8 +19,11 @@ router.route("/add").post((req, res) => {
 
   const newTrip = new Trip({
     routeID,
+    routeNo,
     busID,
+    busRegNo,
     userID,
+    userName,
     startLocation,
     endLocation,
     charge,

@@ -112,12 +112,9 @@ export default class AddFineInspector extends Component {
                                             .map((item) => {
                                                 return (
                                                     <tr key={item["_id"]}>
-                                                        {this.getRouteInfo(item["routeID"])}
-                                                        {this.getBusReg(item["busID"])}
-                                                        {this.getUserName(item["userID"])}
-                                                        <td>{this.state.routeDetails["routeNo"]}</td>
-                                                        <td>{this.state.busDetails["regNo"]}</td>
-                                                        <td>{this.state.userDetails["username"]}</td>
+                                                        <td>{item["routeNo"]}</td>
+                                                        <td>{item["busRegNo"]}</td>
+                                                        <td>{item["userName"]}</td>
                                                         <td>{item["startLocation"]}</td>
                                                         <td>{item["endLocation"]}</td>
                                                         <td>{item["charge"]}</td>

@@ -6,7 +6,9 @@ const Schema = mongoose.Schema;
 const fineSchema = new Schema(
   {
     userID: { type: String, required: true, trim: true },
+    userName: { type: String, trim: true },
     tripID: { type: String, required: true, trim: true },
+    Location: { type: String, trim: true },
     fine: { type: Number, required: true, trim: true },
     paidOrNot: { type: String, required: true, trim: true },
   },

@@ -110,7 +110,9 @@ export default class AddFineInspectorPage extends Component {
 
         const fines = {
             userID: this.state.userID,
+            userName: this.state.userDetails,
             tripID: this.state.id,
+            Location: this.state.startLocation + " to " + this.state.endLocation,
             fine: this.state.fine,
             paidOrNot: "Not Paid",
 
@@ -128,7 +130,7 @@ export default class AddFineInspectorPage extends Component {
             })
             .catch((error) => {
                 console.log(error.response);
-                toast("Email or Username Exists");
+                toast("Error");
             });
 
 

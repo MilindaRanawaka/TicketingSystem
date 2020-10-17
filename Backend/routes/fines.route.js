@@ -5,13 +5,17 @@ let Fine = require("../models/fines.model");
 //@desc Add New Fine
 router.route("/add").post((req, res) => {
   const userID = req.body.userID;
+  const userName = req.body.userName;
   const tripID = req.body.tripID;
+  const Location = req.body.Location;
   const fine = req.body.fine;
   const paidOrNot = req.body.paidOrNot;
 
   const newFine = new Fine({
     userID,
+    userName,
     tripID,
+    Location,
     fine,
     paidOrNot
   });

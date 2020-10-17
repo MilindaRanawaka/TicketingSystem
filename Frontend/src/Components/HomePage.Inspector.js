@@ -83,8 +83,8 @@ export default class InspectorHomepage extends React.Component {
                                                     <tr key={item["_id"]}>
                                                         {this.getTripName(item["tripID"])}
                                                         {this.getUserName(item["userID"])}
-                                                        <td>{this.state.userDetails["username"]}</td>
-                                                        <td>{this.state.tripDetails["startLocation"]} to {this.state.tripDetails["endLocation"]}</td>
+                                                        <td>{item["userName"]}</td>
+                                                        <td>{item["Location"]}</td>
                                                         <td>{item["fine"]}</td>
                                                         <td>{item["paidOrNot"]}</td>
                                                     </tr>

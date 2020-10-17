@@ -6,8 +6,11 @@ const Schema = mongoose.Schema;
 const tripSchema = new Schema(
   {
     routeID: { type: String, required: true, trim: true },
+    routeNo: { type: String, trim: true },
     busID: { type: String, required: true, trim: true },
+    busRegNo: { type: String, trim: true },
     userID: { type: String, required: true, trim: true },
+    userName: { type: String, trim: true },
     startLocation: { type: String, required: true, trim: true },
     endLocation: { type: String, required: true, trim: true },
     charge: { type: Number, required: true, trim: true },
