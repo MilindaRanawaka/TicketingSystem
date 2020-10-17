@@ -100,7 +100,7 @@ export default class PayFine extends React.Component {
             <div className="container" style={{ maxWidth: "30%", marginTop: 100}}>
                 <div className=" h-100">
                     <h3 align="center">Pay Fine</h3><br/>
-                            <form onSubmit={this.onSubmit}>
+                            <form onSubmit={this.onSubmit} className="addFine">
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1">Full Name</label>
                                     <input type="text" className="form-control" id="exampleInputEmail1"
@@ -110,21 +110,21 @@ export default class PayFine extends React.Component {
                                 </div><br/>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1">Trip ID</label>
-                                    <input type="text" className="form-control" id="exampleInputEmail1"
+                                    <input type="text" className="form-control" id="exampleInputEmail2"
                                            aria-describedby="numberHelp"
                                            value={this.state.tripID}
                                            disabled/>
                                 </div><br/>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1">Locations</label>
-                                    <input type="text" className="form-control" id="exampleInputEmail1"
+                                    <input type="text" className="form-control" id="exampleInputEmail3"
                                            aria-describedby="numberHelp"
                                            value={this.state.Location}
                                            disabled/>
                                 </div><br/>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1">Fine Amount</label>
-                                    <input type="number" className="form-control" id="exampleInputEmail1"
+                                    <input type="number" className="form-control" id="exampleInputEmail4"
                                            aria-describedby="numberHelp"
                                            value={this.state.fine}
                                            disabled/>

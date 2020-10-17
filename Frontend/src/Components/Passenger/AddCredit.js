@@ -94,7 +94,7 @@ export default class AddCredit extends React.Component {
         return (
             <div className="container" style={{ maxWidth: "30%"}}>
                 <h3 align="center"><b>Add Credit to Account</b></h3><br/>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit} className="addCredit">
                     <div className="form-group">
                         <label className="control-label">Card Type</label>
                         <div className="row">
@@ -139,6 +139,7 @@ export default class AddCredit extends React.Component {
                                className="form-control"
                                placeholder="Card Holder Name"
                                value={this.state.cardHolderName}
+                               id="cardHolderName"
                                onChange={(e) =>
                                    this.updateInput("cardHolderName", e.target.value)
                                }
@@ -149,6 +150,7 @@ export default class AddCredit extends React.Component {
                         <input type="text"
                                className="form-control"
                                placeholder="Card Number"
+                               id="cardNumberId"
                                value={this.state.cardNumber}
                                onChange={(e) =>
                                    this.updateInput("cardNumber", e.target.value)
