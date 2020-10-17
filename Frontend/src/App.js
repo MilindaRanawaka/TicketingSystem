@@ -25,6 +25,7 @@ import AddFineInspectorPage from "./Components/Inspector/addFinePage"
 import PassengerBus from "./Components/Passenger_Bus.Passenger";
 import FinesList from "./Components/Passenger/FinesList";
 import TripHistory from "./Components/Passenger/TripHistory";
+import StatisticsOvercrowded from "./Components/Statistics.Overcrowded"
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
               {<PrivateRoute component={PassengerBus} AccessBy={"admin"} path="/passenger-bus" exact />}
               {<PrivateRoute component={PassengerDate} AccessBy={"admin"} path="/passenger-date" exact />}
               {<PrivateRoute component={StatisticsPassengerTrips} AccessBy={"admin"} path="/passengerStat" exact />}
+              {<PrivateRoute component={StatisticsOvercrowded} AccessBy={"admin"} path="/overcrowded" exact />}
 
               {/*Ticket Inspector Only Routes*/}
               <PrivateRoute component={InspectorHomepage} AccessBy={"inspector"} path="/inspectorHome" exact />

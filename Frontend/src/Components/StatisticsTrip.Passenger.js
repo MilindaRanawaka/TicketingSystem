@@ -107,7 +107,6 @@ class StatisticsPassengerTrips extends React.Component {
                 case 1: categories.push('admin');break;
                 case 2: categories.push('inspector');break;
                 case 3: categories.push('passenger');break;
-
             }
         })
          */
@@ -501,4 +500,3 @@ class StatisticsPassengerTrips extends React.Component {
 }
 
 export default StatisticsPassengerTrips;
-

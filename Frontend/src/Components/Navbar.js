@@ -74,6 +74,11 @@ class Navbar extends Component {
                                                             <button type="button" className="btn btn-primary">Passenger Trips</button>
                                                         </a>
                                                     </div>
+                                                    <div className="col-md-auto">
+                                                        <a href="/overcrowded">
+                                                            <button type="button" className="btn btn-primary">Overcrowded Buses</button>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         ) : (
