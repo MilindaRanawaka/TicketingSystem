@@ -69,11 +69,12 @@ export default class Login extends React.Component {
             <div className="container" style={{maxWidth: "35%"}}>
                 <div className=" h-100">
                     <h3 align="center">Login</h3>
-                    <form onSubmit={this.onSubmit}>
+                    <form onSubmit={this.onSubmit} id="loginform">
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Email address</label>
                             <input type="email" className="form-control" placeholder="Email"
                                    value={this.state.email}
+                                   id="unid"
                                    onChange={(e) => this.updateInput("email", e.target.value)}
                                    required/>
                         </div>
@@ -81,6 +82,7 @@ export default class Login extends React.Component {
                             <label htmlFor="exampleInputPassword1">Password</label>
                             <input type="password" className="form-control" placeholder="password"
                                    value={this.state.password}
+                                   id="pwdid"
                                    onChange={(e) =>
                                        this.updateInput("password", e.target.value)
                                    }
