@@ -146,7 +146,7 @@ export default class AddFineInspectorPage extends Component {
                 <MDBContainer>
                     <MDBRow>
                         <MDBCol className="all-center" md="6">
-                            <form onSubmit={this.onSubmit}>
+                            <form onSubmit={this.onSubmit} className="fineForm">
                                 <p className="h4 text-center mb-4">Add Fine</p>
                                 <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
                                     Route No
@@ -186,7 +186,7 @@ export default class AddFineInspectorPage extends Component {
                                 <label htmlFor="defaultFormRegisterPasswordEx" className="grey-text">
                                     Amount
                                 </label>
-                                <input type="text" id="exampleDisabled" className="form-control" placeholder="Type Amount" onChange={(e) =>
+                                <input type="text" id="amountInput" className="form-control" placeholder="Type Amount" onChange={(e) =>
                                     this.updateInput("fine", e.target.value)
                                 } />
                                 <div className="text-center mt-4">

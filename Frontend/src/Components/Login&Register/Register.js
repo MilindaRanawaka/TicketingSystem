@@ -79,11 +79,12 @@ class Register extends Component {
         return (
             <div className="container" style={{ maxWidth: "35%"}}>
                 <h3 align="center"><b>Create Passenger Account</b></h3><br/>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit} className="register">
                     <div className="form-group">
                         <label>User Name</label>
                         <input type="text"
                                className="form-control"
+                               id="usernameID"
                                placeholder="User Name"
                                value={this.state.username}
                                onChange={(e) =>
@@ -96,6 +97,7 @@ class Register extends Component {
                         <input type="email"
                                className="form-control"
                                placeholder="Email"
+                               id="emailid"
                                value={this.state.email}
                                onChange={(e) => this.updateInput("email", e.target.value)}
                                required/>
