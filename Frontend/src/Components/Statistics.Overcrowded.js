@@ -1,7 +1,6 @@
 import React from "react";
-import { Bar, Pie } from "react-chartjs-2";
-import { MDBCard, MDBCardBody, MDBContainer } from "mdbreact";
-import PassengerTripNavBar from "./NavBar.PassengerTrips";
+import { Bar } from "react-chartjs-2";
+import { MDBCard, MDBCardBody } from "mdbreact";
 import { Col, Row } from "react-bootstrap";
 import axios from "axios";
 import { serverUrl } from "./config";
@@ -140,7 +139,6 @@ class StatisticsOvercrowded extends React.Component {
     userByBus(userBusData) {
 
         let bType = [];
-        let TypeCounts = [];
         userBusData.forEach(element => {
             if (bType.indexOf(element.busID) === -1) {
                 bType.push(element.busID);

@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { Card, CardBody, Col, Row, Table } from "reactstrap";
 import axios from "axios";
-import Calendar from 'react-calendar';
-import { TOKEN_UNAME, serverUrl } from "../config";
+import { serverUrl } from "../config";
 import 'react-calendar/dist/Calendar.css';
 
-var count = 0;
 
 export default class AddFineInspector extends Component {
 
