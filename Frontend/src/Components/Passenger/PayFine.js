@@ -2,11 +2,11 @@ import React from 'react';
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {serverUrl, TOKEN_ID} from "../config";
+import {serverUrl, TOKEN_ID, TOKEN_UNAME} from "../config";
 
 toast.configure();
 
-//Add Passenger of the System
+//Pay Fine
 export default class PayFine extends React.Component {
     constructor(props) {
         super(props);
@@ -17,7 +17,9 @@ export default class PayFine extends React.Component {
         this.state = {
             balance: 0,
             payingValue: 0,
-            fine: 0
+            fine: 0,
+            tripID:"",
+            Location:""
         };
 
     }
@@ -32,10 +34,11 @@ export default class PayFine extends React.Component {
 
                 this.setState({
                     fine: response.data.fine,
+                    tripID: response.data.tripID,
+                    Location: response.data.Location,
 
                 });
 
-                console.log("print"+this.state.fine);
             })
             .catch(function (error) {
                 console.log(error);
@@ -94,23 +97,35 @@ export default class PayFine extends React.Component {
 
     render() {
         return (
-            <div className="container" style={{ maxWidth: "30%", marginTop: 150}}>
+            <div className="container" style={{ maxWidth: "30%", marginTop: 100}}>
                 <div className=" h-100">
                     <h3 align="center">Pay Fine</h3><br/>
                             <form onSubmit={this.onSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="exampleInputEmail1">Fine Amount</label>
-                                    <input type="number" className="form-control" id="exampleInputEmail1"
+                                    <label htmlFor="exampleInputEmail1">Full Name</label>
+                                    <input type="text" className="form-control" id="exampleInputEmail1"
                                            aria-describedby="numberHelp"
-                                           placeholder="Enter Value"
-                                           value={this.state.fine}
+                                           value={localStorage.getItem(TOKEN_UNAME)}
+                                           disabled/>
+                                </div><br/>
+                                <div className="form-group">
+                                    <label htmlFor="exampleInputEmail1">Trip ID</label>
+                                    <input type="text" className="form-control" id="exampleInputEmail1"
+                                           aria-describedby="numberHelp"
+                                           value={this.state.tripID}
+                                           disabled/>
+                                </div><br/>
+                                <div className="form-group">
+                                    <label htmlFor="exampleInputEmail1">Locations</label>
+                                    <input type="text" className="form-control" id="exampleInputEmail1"
+                                           aria-describedby="numberHelp"
+                                           value={this.state.Location}
                                            disabled/>
                                 </div><br/>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1">Fine Amount</label>
                                     <input type="number" className="form-control" id="exampleInputEmail1"
                                            aria-describedby="numberHelp"
-                                           placeholder="Enter Value"
                                            value={this.state.fine}
                                            disabled/>
                                 </div><br/>
