@@ -42,27 +42,26 @@ class TripHistory extends Component {
 
     render() {
         return (
-
-            <div className="container" style={{ marginTop: 30 , maxWidth: "75%"}}>
+            <div className="container" style={{marginTop: 30, maxWidth: "75%"}}>
                 <br/><h3 align="center"><b>Trip History</b></h3><br/>
-                        <Card>
-                            <CardBody>
-                                <MDBTable hover>
-                                    <MDBTableHead className="text-primary">
-                                        <tr className="text-center">
-                                            <th>Locations</th>
-                                            <th>Route</th>
-                                            <th>Bus</th>
-                                            <th>Distance</th>
-                                            <th>Charge</th>
-                                        </tr>
-                                    </MDBTableHead>
-                                    <tbody>
-                                    {this.tripList()}
-                                    </tbody>
-                                </MDBTable>
-                            </CardBody>
-                        </Card>
+                <Card>
+                    <CardBody>
+                        <MDBTable hover>
+                            <MDBTableHead className="text-primary">
+                                <tr className="text-center">
+                                    <th>Locations</th>
+                                    <th>Route</th>
+                                    <th>Bus</th>
+                                    <th>Distance</th>
+                                    <th>Charge</th>
+                                </tr>
+                            </MDBTableHead>
+                            <tbody>
+                            {this.tripList()}
+                            </tbody>
+                        </MDBTable>
+                    </CardBody>
+                </Card>
             </div>
         );
     }

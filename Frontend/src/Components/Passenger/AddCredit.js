@@ -6,7 +6,7 @@ import {serverUrl, TOKEN_ID} from "../config";
 
 toast.configure();
 
-//Add Passenger of the System
+//Add Credit of the System
 export default class AddCredit extends React.Component {
     constructor(props) {
         super(props);
@@ -30,7 +30,7 @@ export default class AddCredit extends React.Component {
             [key]: value,
         });
     }
-    
+
     //url from backend
     componentDidMount() {
         axios

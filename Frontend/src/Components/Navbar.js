@@ -42,12 +42,12 @@ class Navbar extends Component {
                                 data-toggle="collapse"
                                 data-target="#bs-example-navbar-collapse-1"
                             >
-                                <span className="navbar-toggler-icon" />
+                                <span className="navbar-toggler-icon"/>
                             </button>
 
                             <a className="navbar-brand" href="/">
 
-                               <b>Ticketing System</b>
+                                <b>Ticketing System</b>
                             </a>
                             <div
                                 className="collapse navbar-collapse"
@@ -61,28 +61,34 @@ class Navbar extends Component {
                                                 <div className="row">
                                                     <div className="col-md-auto">
                                                         <a href="/adminHome">
-                                                            <button type="button" className="btn btn-primary">Home</button>
+                                                            <button type="button" className="btn btn-primary">Home
+                                                            </button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/financeStat">
-                                                            <button type="button" className="btn btn-primary">Finance</button>
+                                                            <button type="button" className="btn btn-primary">Finance
+                                                            </button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/passengerStat">
-                                                            <button type="button" className="btn btn-primary">Passenger Trips</button>
+                                                            <button type="button" className="btn btn-primary">Passenger
+                                                                Trips
+                                                            </button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/overcrowded">
-                                                            <button type="button" className="btn btn-primary">Overcrowded Buses</button>
+                                                            <button type="button"
+                                                                    className="btn btn-primary">Overcrowded Buses
+                                                            </button>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         ) : (
-                                            <span style={{ display: "none" }}> Empty </span>
+                                            <span style={{display: "none"}}> Empty </span>
                                         )}
                                         {this.state.isLogin &&
                                         localStorage.getItem(TOKEN_TYPE) === "passenger" ? (
@@ -90,33 +96,42 @@ class Navbar extends Component {
                                                 <div className="row">
                                                     <div className="col-md-auto">
                                                         <a href="/passengerHome">
-                                                            <button type="button" className="btn btn-primary">Home</button>
+                                                            <button type="button" className="btn btn-primary">Home
+                                                            </button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/addCredit">
-                                                            <button type="button" className="btn btn-primary">Add Credit</button>
+                                                            <button type="button" className="btn btn-primary">Add
+                                                                Credit
+                                                            </button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/fineList">
-                                                            <button type="button" className="btn btn-primary">Fines List</button>
+                                                            <button type="button" className="btn btn-primary">Fines
+                                                                List
+                                                            </button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/viewHistory">
-                                                            <button type="button" className="btn btn-primary">Trip History</button>
+                                                            <button type="button" className="btn btn-primary">Trip
+                                                                History
+                                                            </button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/creditHistory">
-                                                            <button type="button" className="btn btn-primary">Credit History</button>
+                                                            <button type="button" className="btn btn-primary">Credit
+                                                                History
+                                                            </button>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         ) : (
-                                            <span style={{ display: "none" }}> Empty </span>
+                                            <span style={{display: "none"}}> Empty </span>
                                         )}
                                         {this.state.isLogin &&
                                         localStorage.getItem(TOKEN_TYPE) === "inspector" ? (
@@ -124,32 +139,22 @@ class Navbar extends Component {
                                                 <div className="row">
                                                     <div className="col-md-auto">
                                                         <a href="/inspectorHome">
-                                                            <button type="button" className="btn btn-primary">Home</button>
+                                                            <button type="button" className="btn btn-primary">Home
+                                                            </button>
                                                         </a>
                                                     </div>
                                                     <div className="col-md-auto">
                                                         <a href="/addFine">
-                                                            <button type="button" className="btn btn-primary">Add Fine</button>
+                                                            <button type="button" className="btn btn-primary">Add Fine
+                                                            </button>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         ) : (
-                                            <span style={{ display: "none" }}> Empty </span>
+                                            <span style={{display: "none"}}> Empty </span>
                                         )}
                                     </li>
-                                    {/*
-                                    <li className="nav-item active">
-                                        <a href="/login"><button className="btn btn-primary my-2 my-sm-0"
-                                                                 type="submit">Login</button></a>
-
-                                    </li>
-
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="/">Link</a>
-                                    </li>
-                                    onClick={this.handleCategoryClick(item.categoryName)} onChange={this.onChangeCat}
-                                    */}
                                 </ul>
                                 <ul className="navbar-nav ml-md-auto">
                                     <li className="ml-2">
@@ -157,9 +162,9 @@ class Navbar extends Component {
                                     </li>
                                     <li className="nav-item active">
                                         {this.state.isLogin ? (
-                                                <div className="row">
-                                                    <div className="col-md-auto">
-                                                        <h5>
+                                            <div className="row">
+                                                <div className="col-md-auto">
+                                                    <h5>
                                                         <span className="badge badge-pill badge-light">
                                                         <a
                                                             href="#"
@@ -170,21 +175,24 @@ class Navbar extends Component {
                                                             {localStorage.getItem(TOKEN_UNAME)}{" "}
                                                         </a>
                                                             </span></h5>
-                                                    </div>
-                                                    <div className="col-md-auto">
-                                                        <Link to="" onClick={() => this.handleLogout()}>
-                                                            <a href="/login">
-                                                                <button className="btn btn-sm btn-outline-primary"
-                                                                        type="button">Logout
-                                                                </button></a>
-                                                        </Link>
-                                                    </div>
                                                 </div>
+                                                <div className="col-md-auto">
+                                                    <Link to="" onClick={() => this.handleLogout()}>
+                                                        <a href="/login">
+                                                            <button className="btn btn-sm btn-outline-primary"
+                                                                    type="button">Logout
+                                                            </button>
+                                                        </a>
+                                                    </Link>
+                                                </div>
+                                            </div>
                                         ) : (
 
-                                            <a href="/login"><button className="btn btn-primary my-2 my-sm-0"
-                                                                     type="submit">Login</button></a>
-
+                                            <a href="/login">
+                                                <button className="btn btn-primary my-2 my-sm-0"
+                                                        type="submit">Login
+                                                </button>
+                                            </a>
                                         )}
                                     </li>
                                     <br />

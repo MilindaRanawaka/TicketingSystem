@@ -4,6 +4,7 @@ import {serverUrl} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 import {Card, CardBody} from "reactstrap";
 
+//View Passenger Credit history
 class CreditHistory extends Component {
     constructor(props) {
         super(props);
@@ -41,27 +42,25 @@ class CreditHistory extends Component {
 
     render() {
         return (
-
             <div className="container" style={{ marginTop: 30 , maxWidth: "75%"}}>
-                <br/><br/> <br/><br/>
-                <h3 align="center"><b>Credit History</b></h3><br/>
-                        <Card>
-                            <CardBody>
-                                <MDBTable hover>
-                                    <MDBTableHead className="text-primary">
-                                        <tr className="text-center">
-                                            <th>Card Holder Name</th>
-                                            <th>Card Number</th>
-                                            <th>Expire Date</th>
-                                            <th>Amount</th>
-                                        </tr>
-                                    </MDBTableHead>
-                                    <tbody>
-                                    {this.creditList()}
-                                    </tbody>
-                                </MDBTable>
-                            </CardBody>
-                        </Card>
+                <br/><br/><br/><br/><h3 align="center"><b>Credit History</b></h3><br/>
+                <Card>
+                    <CardBody>
+                        <MDBTable hover>
+                            <MDBTableHead className="text-primary">
+                                <tr className="text-center">
+                                    <th>Card Holder Name</th>
+                                    <th>Card Number</th>
+                                    <th>Expire Date</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </MDBTableHead>
+                            <tbody>
+                            {this.creditList()}
+                            </tbody>
+                        </MDBTable>
+                    </CardBody>
+                </Card>
             </div>
         );
     }
