@@ -10,9 +10,7 @@ import {
   TOKEN_GENDER,
 } from "../config";
 
-
 //All the security authentication contains here
-
 
 const jwt = require("jsonwebtoken");
 

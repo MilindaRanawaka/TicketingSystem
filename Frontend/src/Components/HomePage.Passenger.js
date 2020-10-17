@@ -6,6 +6,7 @@ import CardSection from "./Passenger/Card/CardSection";
 import 'office-ui-fabric-react/dist/css/fabric.css';
 import FinesList from "./Passenger/FinesList";
 
+//Passenger Dashboard
 export default class PassengerHomepage extends React.Component  {
 
     constructor(props) {
@@ -14,7 +15,6 @@ export default class PassengerHomepage extends React.Component  {
         this.state = {
             balance: 0
         };
-
     }
 
     componentDidMount() {
@@ -34,13 +34,13 @@ export default class PassengerHomepage extends React.Component  {
 
     render() {
         return (
-            <div className="container" style={{ maxWidth: "100%"}}>
+            <div className="container" style={{maxWidth: "100%"}}>
                 <div className="row">
-                    <div className="col" style={{paddingLeft: 30 }}>
-                        <h1 style={{fontWeight: 'bold', color: '#0078d4', paddingTop: 30, paddingLeft: 220, }}>
+                    <div className="col" style={{paddingLeft: 30}}>
+                        <h1 style={{fontWeight: 'bold', color: '#0078d4', paddingTop: 30, paddingLeft: 220,}}>
                             Passenger Dashboard
                         </h1>
-                        <h4 style={{fontWeight: 'bold', paddingTop: 30,  paddingLeft: 220,}}>
+                        <h4 style={{fontWeight: 'bold', paddingTop: 30, paddingLeft: 220,}}>
                             Welcome {localStorage.getItem(TOKEN_UNAME)}
                         </h4>
                     </div>
@@ -50,7 +50,7 @@ export default class PassengerHomepage extends React.Component  {
                         </div>
                     </div>
                 </div>
-                <div className="container" style={{ maxWidth: "95%"}}>
+                <div className="container" style={{maxWidth: "95%"}}>
                     <div className="row">
                         <div className="col">
                             <FinesList/>
@@ -61,7 +61,6 @@ export default class PassengerHomepage extends React.Component  {
                         <div className="col">
                             <TripHistory/>
                         </div>
-
                     </div>
                 </div>
             </div>

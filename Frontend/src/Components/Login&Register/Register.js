@@ -77,7 +77,7 @@ class Register extends Component {
 
     render() {
         return (
-            <div className="container" style={{ maxWidth: "35%"}}>
+            <div className="container" style={{maxWidth: "35%"}}>
                 <h3 align="center"><b>Create Passenger Account</b></h3><br/>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
@@ -185,7 +185,7 @@ class Register extends Component {
                     </div>
 
                     <br/>
-                    <div className="container" style={{ width: 300 }}>
+                    <div className="container" style={{width: 300}}>
                         <button type="submit" className="btn btn-primary btn-block"><b>Register</b></button>
                     </div>
                     <br/><br/>

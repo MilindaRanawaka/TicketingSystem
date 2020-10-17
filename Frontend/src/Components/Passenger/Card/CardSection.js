@@ -4,11 +4,8 @@ import { Text, initializeIcons } from '@fluentui/react';
 import 'office-ui-fabric-react/dist/css/fabric.css';
 import { CARD_STYLES as styles } from './styles';
 
+//Card in Dashboard
 export default class CardSection extends React.Component  {
-
-	constructor(props) {
-		super(props);
-	}
 
 	render() {
 		initializeIcons();
