@@ -94,7 +94,7 @@ class PassengerBus extends Component {
                                             return (
                                                 <tr key={item["_id"]}>
                                                     <td >{item["userName"]}</td>
-                                                    <td className="text-center">{item["regNo"]}</td>
+                                                    <td className="text-center">{item["busRegNo"]}</td>
                                                     <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",
