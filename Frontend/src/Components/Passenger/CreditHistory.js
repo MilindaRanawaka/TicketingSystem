@@ -4,21 +4,22 @@ import {serverUrl} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 import {Card, CardBody} from "reactstrap";
 
-class TripHistory extends Component {
+//View Passenger Credit history
+class CreditHistory extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            trips: [],
+            credits: [],
         };
     }
 
     componentDidMount() {
         axios
-            .get(serverUrl + "/trips")
+            .get(serverUrl + "/credits")
             .then((response) => {
                 this.setState({
-                    trips: response.data,
+                    credits: response.data,
                 });
             })
             .catch(function (error) {
@@ -26,15 +27,14 @@ class TripHistory extends Component {
             });
     }
 
-    tripList() {
-        return this.state.trips.map(function (obj, i) {
+    creditList() {
+        return this.state.credits.map(function (obj, i) {
             return (
                 <tr className="text-center" key={i}>
-                    <td>{obj.startLocation} to {obj.endLocation}</td>
-                    <td className="text-center">{obj.routeNo}</td>
-                    <td className="text-center">{obj.busRegNo}</td>
-                    <td className="text-center">{obj.distance}</td>
-                    <td className="text-center">Rs. {obj.charge}.00</td>
+                    <td>{obj.cardHolderName}</td>
+                    <td className="text-center">{obj.cardNumber}</td>
+                    <td className="text-center">{obj.expireDate}</td>
+                    <td className="text-center">{obj.amount}</td>
                 </tr>
             );
         });
@@ -42,22 +42,21 @@ class TripHistory extends Component {
 
     render() {
         return (
-            <div className="container" style={{marginTop: 30, maxWidth: "75%"}}>
-                <br/><h3 align="center"><b>Trip History</b></h3><br/>
+            <div className="container" style={{ marginTop: 30 , maxWidth: "75%"}}>
+                <br/><br/><br/><br/><h3 align="center"><b>Credit History</b></h3><br/>
                 <Card>
                     <CardBody>
                         <MDBTable hover>
                             <MDBTableHead className="text-primary">
                                 <tr className="text-center">
-                                    <th>Locations</th>
-                                    <th>Route</th>
-                                    <th>Bus</th>
-                                    <th>Distance</th>
-                                    <th>Charge</th>
+                                    <th>Card Holder Name</th>
+                                    <th>Card Number</th>
+                                    <th>Expire Date</th>
+                                    <th>Amount</th>
                                 </tr>
                             </MDBTableHead>
                             <tbody>
-                            {this.tripList()}
+                            {this.creditList()}
                             </tbody>
                         </MDBTable>
                     </CardBody>
@@ -67,4 +66,4 @@ class TripHistory extends Component {
     }
 }
 
-export default TripHistory;
+export default CreditHistory;

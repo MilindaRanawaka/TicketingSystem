@@ -6,7 +6,7 @@ import {serverUrl, TOKEN_ID} from "../config";
 
 toast.configure();
 
-//Add Passenger of the System
+//Add Credit of the System
 export default class AddCredit extends React.Component {
     constructor(props) {
         super(props);
@@ -31,6 +31,7 @@ export default class AddCredit extends React.Component {
         });
     }
 
+    //url from backend
     componentDidMount() {
         axios
             .get(serverUrl + "/users/" + localStorage.getItem(TOKEN_ID))
@@ -94,6 +95,44 @@ export default class AddCredit extends React.Component {
             <div className="container" style={{ maxWidth: "30%"}}>
                 <h3 align="center"><b>Add Credit to Account</b></h3><br/>
                 <form onSubmit={this.onSubmit}>
+                    <div className="form-group">
+                        <label className="control-label">Card Type</label>
+                        <div className="row">
+                            <div className="col-md-auto">
+                                <div className="form-check">
+                                    <input
+                                        type="radio"
+                                        id="creditRadio"
+                                        name="cardType"
+                                        value="CreditCard"
+                                        onChange={(e) =>
+                                            this.updateInput("cardType", e.target.value)
+                                        }
+                                        required
+                                    />
+                                    <label className="form-check-label" htmlFor="exampleRadios1">
+                                        Credit Card
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="col-md-auto">
+                                <div className="form-check">
+                                    <input
+                                        type="radio"
+                                        id="debitRadio"
+                                        name="cardType"
+                                        value="DebitCard"
+                                        onChange={(e) =>
+                                            this.updateInput("cardType", e.target.value)
+                                        }
+                                    />
+                                    <label className="form-check-label" htmlFor="exampleRadios2">
+                                        Debit Card
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div className="form-group">
                         <label>Card Holder Name</label>
                         <input type="text"

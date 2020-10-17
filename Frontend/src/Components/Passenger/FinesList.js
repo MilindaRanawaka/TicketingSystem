@@ -4,6 +4,7 @@ import {serverUrl} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 import {Card, CardBody, Col, Row} from "reactstrap";
 
+//Fines List of the User
 class FinesList extends Component {
     constructor(props) {
         super(props);
@@ -29,11 +30,7 @@ class FinesList extends Component {
 
     fineList() {
         return this.state.fines.map(function (obj, i) {
-
-
               let paid = obj.paidOrNot;
-
-
             return (
                 <tr className="text-center" key={i}>
                     <td>{obj._id}</td>
@@ -42,18 +39,13 @@ class FinesList extends Component {
                     <td className="text-center"><span className="badge badge-pill badge-primary">{paid}</span></td>
                     <td>{
                         paid === "Not Paid" ? (
-
-                                <a
-                                    href={"/payFine/" + obj._id}
-                                    className="btn btn-outline-primary btn-sm"
-                                >
-                                    Pay
-                                </a>
-
-
-                        ): (
-                            <button disabled className="btn btn-sm btn-outline-primary "
-                                    type="submit">Pay</button>
+                            <a href={"/payFine/" + obj._id} className="btn btn-outline-primary btn-sm">
+                                Pay
+                            </a>
+                        ) : (
+                            <button disabled className="btn btn-sm btn-outline-success " type="submit">
+                                Paid
+                            </button>
                         )
                     }
                     </td>
@@ -65,7 +57,7 @@ class FinesList extends Component {
     render() {
         return (
             <div className="container" style={{ marginTop: 30 , maxWidth: "75%"}}>
-                <h3 align="center"><b>Fines List</b></h3>
+                <br/><h3 align="center"><b>Fines List</b></h3><br/>
                 <Row>
                     <Col md="12">
                         <Card>

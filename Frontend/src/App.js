@@ -24,6 +24,7 @@ import PassengerBus from "./Components/Passenger_Bus.Passenger";
 import FinesList from "./Components/Passenger/FinesList";
 import TripHistory from "./Components/Passenger/TripHistory";
 import StatisticsOvercrowded from "./Components/Statistics.Overcrowded"
+import CreditHistory from "./Components/Passenger/CreditHistory";
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
               <PrivateRoute component={PayFine} AccessBy={"passenger"} path="/payFine/:id" exact />
               <PrivateRoute component={FinesList} AccessBy={"passenger"} path="/fineList" exact />
               <PrivateRoute component={TripHistory} AccessBy={"passenger"} path="/viewHistory" exact />
+              <PrivateRoute component={CreditHistory} AccessBy={"passenger"} path="/creditHistory" exact />
 
             </Switch>
           </Container>
