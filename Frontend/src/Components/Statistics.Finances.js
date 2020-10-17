@@ -205,10 +205,10 @@ class StatisticsFinances extends React.Component {
                             '#7a5195'
                         ],
                         hoverBackgroundColor: [
-                            '#bc5090',
-                            '#ef5675',
                             '#ff764a',
                             '#ffa600',
+                            '#bc5090',
+                            '#ef5675',
                             '#003f5c',
                             '#bc5090',
                             '#ef5675',
@@ -230,16 +230,7 @@ class StatisticsFinances extends React.Component {
                 <MDBCard style={{ width: "40rem" }}>
                     <MDBCardBody>
                 <h3 className="text-center">Fare Income per Each Bus </h3>
-                        <Bar data={this.state.incomePerBus}
-                             options={{
-                                 scales: {
-                                     yAxes: [{
-                                         ticks: {
-                                             beginAtZero: true
-                                         }
-                                     }]
-                                 }}}
-                        />
+                        <Pie data={this.state.incomePerBus}/>
                         </MDBCardBody>
                 </MDBCard>
                     </Col>
