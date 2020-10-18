@@ -11,9 +11,11 @@ describe('Login Component', () => {
     it('renders a username amout input text', () => {
         expect(shallow(<Login />).find('#unid').length).toEqual(1)
     })
+
     it('renders a password fine amount text', () => {
         expect(shallow(<Login />).find('#pwdid').length).toEqual(1)
     })
+
     it('renders a password fine amount text', () => {
         expect(shallow(<Login />).find('#passwordId').length).toEqual(1)
     })
