@@ -1,3 +1,4 @@
+//PayFine components
 import React from 'react';
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -6,7 +7,7 @@ import {serverUrl, TOKEN_ID, TOKEN_UNAME} from "../config";
 
 toast.configure();
 
-//Pay Fine
+//export PayFine
 export default class PayFine extends React.Component {
     constructor(props) {
         super(props);
@@ -25,7 +26,7 @@ export default class PayFine extends React.Component {
     }
 
 
-    
+    //call the api from backend
     componentDidMount() {
 
         axios
@@ -57,7 +58,7 @@ export default class PayFine extends React.Component {
                 console.log(error);
             });
     }
-
+    //submit the for details function
     onSubmit(e) {
         e.preventDefault();
 
