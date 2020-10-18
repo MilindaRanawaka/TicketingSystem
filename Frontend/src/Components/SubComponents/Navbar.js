@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {TOKEN_UNAME, TOKEN_TYPE} from "./config";
-import { isLogin, logout } from "./ReactMiddleware/reactAuth";
+import {TOKEN_UNAME, TOKEN_TYPE} from "../config";
+import { isLogin, logout } from "../ReactMiddleware/reactAuth";
 import { Link } from "react-router-dom";
 
 class Navbar extends Component {

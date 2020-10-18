@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, Col, Row, Table } from "reactstrap";
 import axios from "axios";
-import { TOKEN_UNAME, serverUrl } from "./config";
+import { TOKEN_UNAME, serverUrl } from "../config";
 
 export default class InspectorHomepage extends React.Component {
 

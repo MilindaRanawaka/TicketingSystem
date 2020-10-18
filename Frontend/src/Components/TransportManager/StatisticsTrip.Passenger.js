@@ -1,10 +1,10 @@
 import React from "react";
 import {Bar, Pie} from "react-chartjs-2";
-import {MDBCard, MDBCardBody, MDBContainer} from "mdbreact";
+import {MDBCard, MDBCardBody} from "mdbreact";
 import PassengerTripNavBar from "./NavBar.PassengerTrips";
 import {Col, Row} from "react-bootstrap";
 import axios from "axios";
-import {serverUrl} from "./config";
+import {serverUrl} from "../config";
 
 class StatisticsPassengerTrips extends React.Component {
 

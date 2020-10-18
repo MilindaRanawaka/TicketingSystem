@@ -1,10 +1,10 @@
 import React from "react";
-import {Bar, Doughnut, HorizontalBar, Pie} from "react-chartjs-2";
-import { Grid, Row, Col } from "react-bootstrap";
-import {MDBCard, MDBCardBody, MDBContainer} from "mdbreact";
+import {Bar, Pie} from "react-chartjs-2";
+import { Row, Col } from "react-bootstrap";
+import {MDBCard, MDBCardBody} from "mdbreact";
 import FinanceNavBar from "./NavBar.Finances";
 import axios from "axios";
-import {serverUrl} from "./config";
+import {serverUrl} from "../config";
 
 class StatisticsFinances extends React.Component {
 

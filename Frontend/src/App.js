@@ -3,27 +3,27 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import { Container } from "@material-ui/core";
 import PublicRoute from "./Components/ReactMiddleware/PublicRoute";
 import Login from "./Components/Login&Register/Login";
-import PassengerHomepage from "./Components/HomePage.Passenger";
+import PassengerHomepage from "./Components/HomePages/HomePage.Passenger";
 import PrivateRoute from "./Components/ReactMiddleware/PrivateRoute";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/SubComponents/Navbar";
 import 'antd/dist/antd.css';
-import AdminHomepage from "./Components/HomePage.Admin";
-import InspectorHomepage from "./Components/HomePage.Inspector";
-import FinancePerDate from "./Components/PerDay.Finances";
-import FinancePerRoute from "./Components/PerRoute.Finances";
-import FinancePerBus from "./Components/PerBus.Finances";
-import StatisticsFinances from "./Components/Statistics.Finances";
-import PassengerRoute from "./Components/Passenger_Route.Passenger";
-import StatisticsPassengerTrips from "./Components/StatisticsTrip.Passenger";
+import AdminHomepage from "./Components/HomePages/HomePage.Admin";
+import InspectorHomepage from "./Components/HomePages/HomePage.Inspector";
+import FinancePerDate from "./Components/TransportManager/PerDay.Finances";
+import FinancePerRoute from "./Components/TransportManager/PerRoute.Finances";
+import FinancePerBus from "./Components/TransportManager/PerBus.Finances";
+import StatisticsFinances from "./Components/TransportManager/Statistics.Finances";
+import PassengerRoute from "./Components/TransportManager/Passenger_Route.Passenger";
+import StatisticsPassengerTrips from "./Components/TransportManager/StatisticsTrip.Passenger";
 import Register from "./Components/Login&Register/Register";
 import AddCredit from "./Components/Passenger/AddCredit";
 import PayFine from "./Components/Passenger/PayFine";
 import AddFineInspector from "./Components/Inspector/addfine"
 import AddFineInspectorPage from "./Components/Inspector/addFinePage"
-import PassengerBus from "./Components/Passenger_Bus.Passenger";
+import PassengerBus from "./Components/TransportManager/Passenger_Bus.Passenger";
 import FinesList from "./Components/Passenger/FinesList";
 import TripHistory from "./Components/Passenger/TripHistory";
-import StatisticsOvercrowded from "./Components/Statistics.Overcrowded"
+import StatisticsOvercrowded from "./Components/TransportManager/Statistics.Overcrowded"
 import CreditHistory from "./Components/Passenger/CreditHistory";
 
 

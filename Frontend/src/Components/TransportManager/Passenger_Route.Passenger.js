@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import {Card, CardBody, Col, Row, Table} from "reactstrap";
-import { MDBTable, MDBTableHead } from 'mdbreact';
-import FinanceNavBar from "./NavBar.Finances";
-import axios from 'axios';
-import {serverUrl} from "./config";
+import {Card, CardBody, Col, Row} from "reactstrap";
+import PassengerTripNavBar from "./NavBar.PassengerTrips";
+import axios from "axios";
+import {serverUrl} from "../config";
+import {MDBTable, MDBTableHead} from "mdbreact";
 
 
-class FinancePerDate extends Component {
-
+class PassengerRoute extends Component {
     constructor(props) {
 
         super(props);
         this.state = {
 
             trips: [],
-            userDetails: [],
+            userInfo: [],
+            busInfo:[],
+            routeInfo:[],
 
         };
     }
@@ -38,7 +39,35 @@ class FinancePerDate extends Component {
             .get(serverUrl + "/users/" + id)
             .then((response) => {
                 this.setState({
-                    userDetails: response.data,
+                    userInfo: response.data,
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    //retrieving bus reg no from buses table
+    getBusNo(id){
+        axios
+            .get(serverUrl + "/buses/" + id)
+            .then((response) => {
+                this.setState({
+                    busInfo: response.data,
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    //retrieving route number from routes table
+    getRouteNo(id){
+        axios
+            .get(serverUrl + "/routes/" + id)
+            .then((response) => {
+                this.setState({
+                    routeInfo: response.data,
                 });
             })
             .catch((error) => {
@@ -49,7 +78,7 @@ class FinancePerDate extends Component {
     render() {
         return (
             <div className="content">
-                <FinanceNavBar/>
+                <PassengerTripNavBar/>
                 <Row>
                     <Col md="12">
                         <Card>
@@ -57,25 +86,25 @@ class FinancePerDate extends Component {
                                 <MDBTable hover>
                                     <MDBTableHead className="text-primary">
                                     <tr>
-                                        <th>Trip Date</th>
-                                        <th className="text-center">Passenger Name</th>
-                                        <th className="text-center">Trip Charge</th>
-                                    </tr >
+                                        <th >Passenger Name</th>
+                                        <th className="text-center">Bus Route No</th>
+                                        <th className="text-center">Trip Date and Time</th>
+                                    </tr>
                                     </MDBTableHead>
                                     <tbody>
                                     {this.state.trips
                                         .map((item) => {
                                             return (
                                                 <tr key={item["_id"]}>
-                                                    <td >{new Intl.DateTimeFormat("en-GB", {
+                                                    <td >{item["userName"]}</td>
+                                                    <td className="text-center">{item["routeNo"]}</td>
+                                                    <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",
                                                         day: "2-digit",
                                                         hour: 'numeric',
                                                         minute: 'numeric'
                                                     }).format(new Date(item["tripDateTime"]))}</td>
-                                                    <td className="text-center">{item["userName"]}</td>
-                                                    <td className="text-center">{item["charge"]}.00</td>
                                                 </tr>
                                             );
                                         })}
@@ -90,8 +119,5 @@ class FinancePerDate extends Component {
     }
 }
 
-export default FinancePerDate;
-
-
-
+export default PassengerRoute;
 

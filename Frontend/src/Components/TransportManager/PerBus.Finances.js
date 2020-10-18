@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
-import {Card, CardBody, Col, Row, Table} from "reactstrap";
-import PassengerTripNavBar from "./NavBar.PassengerTrips";
+import {Card, CardBody, Col, Row} from "reactstrap";
+import FinanceNavBar from "./NavBar.Finances";
 import axios from "axios";
-import {serverUrl} from "./config";
+import {serverUrl} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 
+class FinancePerBus extends Component {
 
-class PassengerRoute extends Component {
     constructor(props) {
 
         super(props);
@@ -16,7 +15,6 @@ class PassengerRoute extends Component {
             trips: [],
             userInfo: [],
             busInfo:[],
-            routeInfo:[],
 
         };
     }
@@ -62,24 +60,11 @@ class PassengerRoute extends Component {
             });
     }
 
-    //retrieving route number from routes table
-    getRouteNo(id){
-        axios
-            .get(serverUrl + "/routes/" + id)
-            .then((response) => {
-                this.setState({
-                    routeInfo: response.data,
-                });
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
 
     render() {
         return (
             <div className="content">
-                <PassengerTripNavBar/>
+                <FinanceNavBar/>
                 <Row>
                     <Col md="12">
                         <Card>
@@ -87,9 +72,10 @@ class PassengerRoute extends Component {
                                 <MDBTable hover>
                                     <MDBTableHead className="text-primary">
                                     <tr>
-                                        <th >Passenger Name</th>
-                                        <th className="text-center">Bus Route No</th>
-                                        <th className="text-center">Trip Date and Time</th>
+                                        <th>Bus No</th>
+                                        <th className="text-center" >Trip Date</th>
+                                        <th className="text-center">Passenger Name</th>
+                                        <th className="text-center">Trip Charge (Rs.)</th>
                                     </tr>
                                     </MDBTableHead>
                                     <tbody>
@@ -97,8 +83,9 @@ class PassengerRoute extends Component {
                                         .map((item) => {
                                             return (
                                                 <tr key={item["_id"]}>
-                                                    <td >{item["userName"]}</td>
-                                                    <td className="text-center">{item["routeNo"]}</td>
+                                                    {this.getUsername(item["userID"])}
+                                                    {this.getBusNo(item["busID"])}
+                                                    <td>{this.state.busInfo["regNo"]}</td>
                                                     <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
                                                         year: "numeric",
                                                         month: "long",
@@ -106,6 +93,8 @@ class PassengerRoute extends Component {
                                                         hour: 'numeric',
                                                         minute: 'numeric'
                                                     }).format(new Date(item["tripDateTime"]))}</td>
+                                                    <td className="text-center">{item["userName"]}</td>
+                                                    <td className="text-center">{item["charge"]}.00</td>
                                                 </tr>
                                             );
                                         })}
@@ -120,5 +109,5 @@ class PassengerRoute extends Component {
     }
 }
 
-export default PassengerRoute;
+export default FinancePerBus;
 

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
-import {Card, CardBody, Col, Row, Table} from "reactstrap";
+import {Card, CardBody, Col, Row} from "reactstrap";
 import FinanceNavBar from "./NavBar.Finances";
 import axios from "axios";
-import {serverUrl} from "./config";
+import {serverUrl} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 
 class FinancePerRoute extends Component {
