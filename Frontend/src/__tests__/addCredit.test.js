@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import AddCredit from '../Components/Passenger/AddCredit'
 
-
+//test cases for addCredit form
 describe('Register Component', () => {
     it('should render without throwing an error', () => {
         expect(shallow(<AddCredit />).find('form.addCredit').exists()).toBe(true)
