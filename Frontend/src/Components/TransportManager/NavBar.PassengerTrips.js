@@ -16,7 +16,6 @@ class PassengerTripNavBar extends Component {
     }
     render() {
         return (
-
             <MDBNavbar color="primary-color" dark expand="md">
                 <MDBNavbarBrand>
                     <strong className="white-text">Passenger Trips Info</strong>
@@ -33,24 +32,6 @@ class PassengerTripNavBar extends Component {
                     <MDBNavItem active={this.state.activeItem === "3"}
                                 onClick={this.toggle("3")}>
                         <MDBNavLink to="/passenger-bus">Passengers - Buses</MDBNavLink>
-                    </MDBNavItem>
-                </MDBNavbarNav>
-                <MDBNavbarNav right>
-                    <MDBNavItem>
-                        <MDBFormInline waves>
-                            <div className='md-form my-0'>
-                                <input
-                                    className='form-control mr-sm-2'
-                                    type='text'
-                                    placeholder=''
-                                    aria-label='Search'
-                                />
-                            </div>
-                        </MDBFormInline>
-                    </MDBNavItem>
-
-                    <MDBNavItem active>
-                        <MDBNavLink to='#!'>Search</MDBNavLink>
                     </MDBNavItem>
                 </MDBNavbarNav>
             </MDBNavbar>

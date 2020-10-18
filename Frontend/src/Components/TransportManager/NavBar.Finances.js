@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBFormInline } from "mdbreact";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink } from "mdbreact";
 
 
 class FinanceNavBar extends Component {
@@ -16,47 +16,29 @@ class FinanceNavBar extends Component {
     }
     render() {
         return (
-                <MDBNavbar color="primary-color" dark expand="md">
-                    <MDBNavbarBrand>
-                        <strong className="white-text">Finance Plan</strong>
-                    </MDBNavbarBrand>
-                        <MDBNavbarNav left>
-                            <MDBNavItem active={this.state.activeItem === "1"}
-                                        onClick={this.toggle("1")}>
-                                <MDBNavLink to="/financeStat">Finance Statistics</MDBNavLink>
-                            </MDBNavItem>
-                            <MDBNavItem active={this.state.activeItem === "2"}
-                                        onClick={this.toggle("2")}>
-                                <MDBNavLink to="/financeHome">Finances Per Day</MDBNavLink>
-                            </MDBNavItem>
-                            <MDBNavItem active={this.state.activeItem === "3"}
-                                        onClick={this.toggle("3")}>
-                                <MDBNavLink to="/financeRoute">Finances Per Bus Route</MDBNavLink>
-                            </MDBNavItem>
-                            <MDBNavItem active={this.state.activeItem === "4"}
-                                        onClick={this.toggle("4")}>
-                                <MDBNavLink to="/financeBus">Finances Per Bus</MDBNavLink>
-                            </MDBNavItem>
-                        </MDBNavbarNav>
-                        <MDBNavbarNav right>
-                            <MDBNavItem>
-                                <MDBFormInline waves>
-                                    <div className='md-form my-0'>
-                                        <input
-                                            className='form-control mr-sm-2'
-                                            type='text'
-                                            placeholder=''
-                                            aria-label='Search'
-                                        />
-                                    </div>
-                                </MDBFormInline>
-                            </MDBNavItem>
-
-                            <MDBNavItem active>
-                                <MDBNavLink to='#!'>Search</MDBNavLink>
-                            </MDBNavItem>
-                        </MDBNavbarNav>
-                </MDBNavbar>
+            <MDBNavbar color="primary-color" dark expand="md">
+                <MDBNavbarBrand>
+                    <strong className="white-text">Finance Plan</strong>
+                </MDBNavbarBrand>
+                <MDBNavbarNav left>
+                    <MDBNavItem active={this.state.activeItem === "1"}
+                                onClick={this.toggle("1")}>
+                        <MDBNavLink to="/financeStat">Finance Statistics</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem active={this.state.activeItem === "2"}
+                                onClick={this.toggle("2")}>
+                        <MDBNavLink to="/financeHome">Finances Per Day</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem active={this.state.activeItem === "3"}
+                                onClick={this.toggle("3")}>
+                        <MDBNavLink to="/financeRoute">Finances Per Bus Route</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem active={this.state.activeItem === "4"}
+                                onClick={this.toggle("4")}>
+                        <MDBNavLink to="/financeBus">Finances Per Bus</MDBNavLink>
+                    </MDBNavItem>
+                </MDBNavbarNav>
+            </MDBNavbar>
         );
     }
 }
