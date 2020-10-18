@@ -1,7 +1,6 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { MDBCard, MDBCardBody } from "mdbreact";
-import { Col, Row } from "react-bootstrap";
 import axios from "axios";
 import { serverUrl } from "../config";
 import OvercrowdedNavBar from "./NavBar.Overcrowded";
@@ -292,25 +291,22 @@ class StatisticsOvercrowded extends React.Component {
         return (
             <div className="content">
                 <OvercrowdedNavBar/>
-                <Row>
-                    <Col xs="6">
-                        <br />
-                        <MDBCard style={{ width: "40rem" }}>
-                            <MDBCardBody>
-                                <h3 className="mt-5">Overcrowded Check per Bus</h3>
-                                <Bar data={this.state.passengerByBus} options={{
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
-                                                beginAtZero: true
-                                            }
-                                        }]
-                                    }
-                                }} />
-                            </MDBCardBody>
-                        </MDBCard>
-                    </Col>
-                </Row>
+                <div className="container" align="center" style={{ paddingTop: 30,}}>
+                    <MDBCard style={{width: "50rem"}}>
+                        <MDBCardBody>
+                            <h3 className="mt-5">Overcrowded Check per Bus</h3>
+                            <Bar data={this.state.passengerByBus} options={{
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }}/>
+                        </MDBCardBody>
+                    </MDBCard>
+                </div>
             </div>
         );
     }

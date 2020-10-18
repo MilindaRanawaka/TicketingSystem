@@ -50,6 +50,7 @@ class FinancePerDate extends Component {
         return (
             <div className="content">
                 <FinanceNavBar/>
+                <div className="container" style={{maxWidth: "90%"}}>
                 <Row>
                     <Col md="12">
                         <Card>
@@ -85,6 +86,7 @@ class FinancePerDate extends Component {
                         </Card>
                     </Col>
                 </Row>
+                </div>
             </div>
         );
     }

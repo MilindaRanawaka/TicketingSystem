@@ -65,45 +65,47 @@ class FinancePerBus extends Component {
         return (
             <div className="content">
                 <FinanceNavBar/>
-                <Row>
-                    <Col md="12">
-                        <Card>
-                            <CardBody>
-                                <MDBTable hover>
-                                    <MDBTableHead className="text-primary">
-                                    <tr>
-                                        <th>Bus No</th>
-                                        <th className="text-center" >Trip Date</th>
-                                        <th className="text-center">Passenger Name</th>
-                                        <th className="text-center">Trip Charge (Rs.)</th>
-                                    </tr>
-                                    </MDBTableHead>
-                                    <tbody>
-                                    {this.state.trips
-                                        .map((item) => {
-                                            return (
-                                                <tr key={item["_id"]}>
-                                                    {this.getUsername(item["userID"])}
-                                                    {this.getBusNo(item["busID"])}
-                                                    <td>{this.state.busInfo["regNo"]}</td>
-                                                    <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
-                                                        year: "numeric",
-                                                        month: "long",
-                                                        day: "2-digit",
-                                                        hour: 'numeric',
-                                                        minute: 'numeric'
-                                                    }).format(new Date(item["tripDateTime"]))}</td>
-                                                    <td className="text-center">{item["userName"]}</td>
-                                                    <td className="text-center">{item["charge"]}.00</td>
-                                                </tr>
-                                            );
-                                        })}
-                                    </tbody>
-                                </MDBTable>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
+                <div className="container" style={{maxWidth: "90%"}}>
+                    <Row>
+                        <Col md="12">
+                            <Card>
+                                <CardBody>
+                                    <MDBTable hover>
+                                        <MDBTableHead className="text-primary">
+                                            <tr>
+                                                <th>Bus No</th>
+                                                <th className="text-center">Trip Date</th>
+                                                <th className="text-center">Passenger Name</th>
+                                                <th className="text-center">Trip Charge (Rs.)</th>
+                                            </tr>
+                                        </MDBTableHead>
+                                        <tbody>
+                                        {this.state.trips
+                                            .map((item) => {
+                                                return (
+                                                    <tr key={item["_id"]}>
+                                                        {this.getUsername(item["userID"])}
+                                                        {this.getBusNo(item["busID"])}
+                                                        <td>{this.state.busInfo["regNo"]}</td>
+                                                        <td className="text-center">{new Intl.DateTimeFormat("en-GB", {
+                                                            year: "numeric",
+                                                            month: "long",
+                                                            day: "2-digit",
+                                                            hour: 'numeric',
+                                                            minute: 'numeric'
+                                                        }).format(new Date(item["tripDateTime"]))}</td>
+                                                        <td className="text-center">{item["userName"]}</td>
+                                                        <td className="text-center">{item["charge"]}.00</td>
+                                                    </tr>
+                                                );
+                                            })}
+                                        </tbody>
+                                    </MDBTable>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                </div>
             </div>
         );
     }

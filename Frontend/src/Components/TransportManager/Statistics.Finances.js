@@ -224,33 +224,36 @@ class StatisticsFinances extends React.Component {
         return (
             <div className="content">
                 <FinanceNavBar/>
-                <Row>
-                <Col xs="6">
-                    <br/>
-                <MDBCard style={{ width: "40rem" }}>
-                    <MDBCardBody>
-                <h3 className="text-center">Fare Income per Each Bus </h3>
-                        <Pie data={this.state.incomePerBus}/>
-                        </MDBCardBody>
-                </MDBCard>
-                    </Col>
-                    <Col xs="6">
-                        <br/>
-                        <MDBCard style={{ width: "40rem" }}>
-                            <h3 className="text-center">Fare Income per Each Bus Route</h3>
-                            <Bar data={this.state.incomePerRoute}
-                                 options={{
-                                     scales: {
-                                         yAxes: [{
-                                             ticks: {
-                                                 beginAtZero: true
-                                             }
-                                         }]
-                                     }}}
-                            />
-                        </MDBCard>
-                    </Col>
-                </Row>
+                <div className="container" style={{maxWidth: "90%"}}>
+                    <Row>
+                        <Col xs="6">
+                            <br/>
+                            <MDBCard style={{width: "40rem"}}>
+                                <MDBCardBody>
+                                    <h3 className="text-center">Fare Income per Each Bus </h3>
+                                    <Pie data={this.state.incomePerBus}/>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </Col>
+                        <Col xs="6">
+                            <br/>
+                            <MDBCard style={{width: "42rem"}}>
+                                <h3 className="text-center">Fare Income per Each Bus Route</h3>
+                                <Bar data={this.state.incomePerRoute}
+                                     options={{
+                                         scales: {
+                                             yAxes: [{
+                                                 ticks: {
+                                                     beginAtZero: true
+                                                 }
+                                             }]
+                                         }
+                                     }}
+                                />
+                            </MDBCard>
+                        </Col>
+                    </Row>
+                </div>
             </div>
         );
     }
