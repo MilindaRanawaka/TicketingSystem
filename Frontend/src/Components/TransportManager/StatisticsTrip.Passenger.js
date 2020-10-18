@@ -280,23 +280,24 @@ class StatisticsPassengerTrips extends React.Component {
 
     render() {
         return (
-                <div className="content">
-                    <PassengerTripNavBar/>
+            <div className="content">
+                <PassengerTripNavBar/>
+                <div className="container" style={{maxWidth: "90%"}}>
                     <Row>
                         <Col xs="6">
                             <br/>
-                            <MDBCard style={{ width: "40rem" }}>
+                            <MDBCard style={{width: "40rem"}}>
                                 <MDBCardBody>
                                     <h3 className="mt-5">Passenger Count Per Bus</h3>
-                                    <Pie data={this.state.passengerByBus} options={{ responsive: true }} />
+                                    <Pie data={this.state.passengerByBus} options={{responsive: true}}/>
                                 </MDBCardBody>
                             </MDBCard>
                         </Col>
                         <Col xs="6">
                             <br/>
-                            <MDBCard style={{ width: "40rem" }}>
+                            <MDBCard style={{width: "40rem"}}>
                                 <h3 className="mt-5">Passenger Count Per Bus Route</h3>
-                                <Bar data={this.state.passengerByRoute}  options={{
+                                <Bar data={this.state.passengerByRoute} options={{
                                     scales: {
                                         yAxes: [{
                                             ticks: {
@@ -304,11 +305,12 @@ class StatisticsPassengerTrips extends React.Component {
                                             }
                                         }]
                                     }
-                                }} />
+                                }}/>
                             </MDBCard>
                         </Col>
                     </Row>
                 </div>
+            </div>
         );
     }
 }
