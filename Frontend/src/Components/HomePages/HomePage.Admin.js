@@ -79,20 +79,26 @@ export default class AdminHomepage extends React.Component  {
     render() {
         return (
             <div className="container">
-                <h1 align="center"> <span className="badge badge-dark">
-                    Welcome Admin {localStorage.getItem(TOKEN_UNAME)}
-                </span></h1>
-                        <br/>
-                            <h3 className="mt-5">User Count by User Type</h3>
-                            <Bar data={this.state.userByType}  options={{
-                                scales: {
-                                    yAxes: [{
-                                        ticks: {
-                                            beginAtZero: true
-                                        }
-                                    }]
+                <div className="col" >
+                    <h1 style={{fontWeight: 'bold', color: '#0078d4', paddingTop: 30, paddingLeft: 120,}}>
+                        Public Transport Manager Dashboard
+                    </h1>
+                    <h4 style={{fontWeight: 'bold', paddingTop: 30, paddingLeft: 120,}}>
+                        Welcome {localStorage.getItem(TOKEN_UNAME)}
+                    </h4>
+                </div>
+                <div className="container" style={{maxWidth: "80%"}}>
+                    <h3 className="mt-5">User Count by User Type</h3>
+                    <Bar data={this.state.userByType} options={{
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
                                 }
-                            }} />
+                            }]
+                        }
+                    }}/>
+                </div>
             </div>
         );
     }
