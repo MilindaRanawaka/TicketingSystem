@@ -1,3 +1,4 @@
+//Add Credit of the System
 import React from 'react';
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -6,8 +7,9 @@ import {serverUrl, TOKEN_ID} from "../config";
 
 toast.configure();
 
-//Add Credit of the System
+//Export the AddCredit
 export default class AddCredit extends React.Component {
+    //presentational components for design pattern
     constructor(props) {
         super(props);
 
@@ -31,7 +33,7 @@ export default class AddCredit extends React.Component {
         });
     }
 
-    //url from backend
+    //get url from backend
     componentDidMount() {
         axios
             .get(serverUrl + "/users/" + localStorage.getItem(TOKEN_ID))
@@ -46,7 +48,8 @@ export default class AddCredit extends React.Component {
                 console.log(error);
             });
     }
-
+    
+    //submit the for with saved
     onSubmit(e) {
         e.preventDefault();
 
