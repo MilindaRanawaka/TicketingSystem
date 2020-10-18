@@ -1,11 +1,13 @@
+// view passenger creditHistory component
 import React, {Component} from 'react';
 import axios from "axios";
 import {serverUrl} from "../config";
 import {MDBTable, MDBTableHead} from "mdbreact";
 import {Card, CardBody} from "reactstrap";
 
-//View Passenger Credit history
+
 class CreditHistory extends Component {
+    //presentational components - design patterns
     constructor(props) {
         super(props);
 
@@ -13,7 +15,7 @@ class CreditHistory extends Component {
             credits: [],
         };
     }
-
+    //call the api from the backend
     componentDidMount() {
         axios
             .get(serverUrl + "/credits")
